@@ -21,7 +21,8 @@ namespace CapstoneSalesCRM.Pages.Companies
 
         public IActionResult OnGet()
         {
-        ViewData["IndustryID"] = new SelectList(_context.Industry, "IndustryID", "IndustryID");
+        ViewData["IndustryID"] = new SelectList(_context.Industry, "IndustryID", "Description");
+        ViewData["LocationID"] = new SelectList(_context.Location, "LocationID", "LocationCity");
             return Page();
         }
 
