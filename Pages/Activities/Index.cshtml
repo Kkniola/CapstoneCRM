@@ -2,10 +2,10 @@
 @model CapstoneSalesCRM.Pages.Activities.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Activities";
 }
 
-<h1>Index</h1>
+<h1>Activities</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -62,10 +62,10 @@
                 @Html.DisplayFor(modelItem => item.DateCompleted)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Contact.ContactID)
+                @Html.DisplayFor(modelItem => item.Contact.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ActivityTask.ActivityTaskID)
+                @Html.DisplayFor(modelItem => item.ActivityTask.TaskDescription)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ActivityID">Edit</a> |

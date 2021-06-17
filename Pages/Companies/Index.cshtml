@@ -2,10 +2,10 @@
 @model CapstoneSalesCRM.Pages.Companies.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Companies";
 }
 
-<h1>Index</h1>
+<h1>Companies</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -53,7 +53,7 @@
                 @Html.DisplayFor(modelItem => item.Facebook)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Industry.IndustryID)
+                @Html.DisplayFor(modelItem => item.Industry.Description)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.CompanyID">Edit</a> |
