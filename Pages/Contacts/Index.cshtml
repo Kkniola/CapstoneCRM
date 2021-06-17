@@ -173,7 +173,7 @@
                 @Html.DisplayFor(modelItem => item.EmergencyContactNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SourceID)
+                @Html.DisplayFor(modelItem => item.Source.SourceDescription)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreatedBy)
@@ -191,13 +191,13 @@
                 @Html.DisplayFor(modelItem => item.Comment)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Role.RoleID)
+                @Html.DisplayFor(modelItem => item.Role.RoleDescription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Location.LocationID)
+                @Html.DisplayFor(modelItem => item.Location.LocationCity)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.State.StateID)
+                @Html.DisplayFor(modelItem => item.State.StateName)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ContactID">Edit</a> |

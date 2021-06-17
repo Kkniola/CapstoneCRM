@@ -93,9 +93,6 @@ namespace CapstoneSalesCRM.Migrations
                     b.Property<string>("LinkedIn")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LocationID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Website")
                         .HasColumnType("nvarchar(max)");
 
