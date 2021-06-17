@@ -1,0 +1,78 @@
+﻿@page
+@model CapstoneSalesCRM.Pages.Activities.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].DateScheduled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].WhoToNotify)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].HowToNotify)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].DateCompleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].ActivityTask)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Activity) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateScheduled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WhoToNotify)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HowToNotify)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCompleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact.ContactID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActivityTask.ActivityTaskID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ActivityID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ActivityID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ActivityID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
