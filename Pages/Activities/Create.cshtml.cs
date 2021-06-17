@@ -21,8 +21,8 @@ namespace CapstoneSalesCRM.Pages.Activities
 
         public IActionResult OnGet()
         {
-        ViewData["ActivityTaskID"] = new SelectList(_context.ActivityTask, "ActivityTaskID", "ActivityTaskID");
-        ViewData["ContactID"] = new SelectList(_context.Contact, "ContactID", "ContactID");
+        ViewData["ActivityTaskID"] = new SelectList(_context.ActivityTask, "ActivityTaskID", "TaskDescription");
+        ViewData["ContactID"] = new SelectList(_context.Contact, "ContactID", "LastName");
             return Page();
         }
 
