@@ -14,10 +14,6 @@ namespace CapstoneSalesCRM.Models
         [Display(Name="Company Name")]
         public string CompanyName { get; set; }
 
-       
-
-        [Display(Name = "Location")]
-        public int LocationID { get; set; }
 
 
         [Display(Name = "Industry ID")]
