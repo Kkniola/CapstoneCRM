@@ -33,5 +33,8 @@ namespace CapstoneSalesCRM.Data
         public DbSet<CapstoneSalesCRM.Models.Location> Location { get; set; }
 
         public DbSet<CapstoneSalesCRM.Models.State> State { get; set; }
-    }
-}
+        
+            }
+        }
+ 
+

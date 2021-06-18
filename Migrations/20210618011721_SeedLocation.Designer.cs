@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CapstoneSalesCRM.Migrations
 {
     [DbContext(typeof(CapstoneSalesCRMContext))]
-    [Migration("20210617222809_LocationID")]
-    partial class LocationID
+    [Migration("20210618011721_SeedLocation")]
+    partial class SeedLocation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
