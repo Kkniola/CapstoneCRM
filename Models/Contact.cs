@@ -80,7 +80,7 @@ namespace CapstoneSalesCRM.Models
 
         public Role Role { get; set; }
         public Source Source { get; set; }
-        public ContactType ContactType { get; set; }
+
         public Location Location { get; set; }
 
         public State State { get; set; }
