@@ -10,6 +10,8 @@ namespace CapstoneSalesCRM.Models
     {
         [Display(Name = "Location ID")] 
         public int LocationID { get; set; }
+        [Display(Name = "Location Name")]
+        public string LocationName { get; set; }
         [Display(Name = "Company Name")]
         public int CompanyID { get; set; }
         [Display(Name = "Address 1")] 

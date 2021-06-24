@@ -66,7 +66,9 @@ namespace CapstoneSalesCRM.Models
         [Display(Name = "Created By")] 
         public string CreatedBy { get; set; }
         [Display(Name = "Date Created")] 
+        
         public DateTime DateCreated { get; set; }
+        
         [Display(Name = "Last Date Contacted")] 
         public DateTime LastDateContacted { get; set; }
         [Display(Name = "Contact Type ID")] 
