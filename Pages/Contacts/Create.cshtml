@@ -10,7 +10,7 @@
 <h4>Contact</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-auto">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -71,7 +71,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Contact.StateID" class="control-label"></label>
-                <select asp-for="Contact.StateID" class ="form-control" asp-items="ViewBag.StateID"></select>
+                <select asp-for="Contact.StateID" class="form-control" asp-items="ViewBag.StateID"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Contact.HomeZipCode" class="control-label"></label>
@@ -125,12 +125,16 @@
             </div>
             <div class="form-group">
                 <label asp-for="Contact.LocationID" class="control-label"></label>
-                <select asp-for="Contact.LocationID" class ="form-control" asp-items="ViewBag.LocationID"></select>
+                <select asp-for="Contact.LocationID" class="form-control" asp-items="ViewBag.LocationID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contact.RoleID" class="control-label"></label>
+                <select asp-for="Contact.RoleID" class="form-control" asp-items="ViewBag.RoleID"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Contact.SourceID" class="control-label"></label>
-                <input asp-for="Contact.SourceID" class="form-control" />
-                <span asp-validation-for="Contact.SourceID" class="text-danger"></span>
+                <select asp-for="Contact.SourceID" class="form-control" asp-items="ViewBag.SourceID"></select>
+              
             </div>
             <div class="form-group">
                 <label asp-for="Contact.CreatedBy" class="control-label"></label>
