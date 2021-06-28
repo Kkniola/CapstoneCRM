@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -65,9 +66,10 @@ namespace CapstoneSalesCRM.Models
         public string SourceID { get; set; }
         [Display(Name = "Created By")] 
         public string CreatedBy { get; set; }
-        [Display(Name = "Date Created")] 
-        
-        public DateTime DateCreated { get; set; }
+        [Display(Name = "Date Created")]
+
+        [HiddenInput] 
+        public DateTime DateCreated { get; set; } 
         
         [Display(Name = "Last Date Contacted")] 
         public DateTime LastDateContacted { get; set; }

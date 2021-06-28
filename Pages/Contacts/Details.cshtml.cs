@@ -21,6 +21,10 @@ namespace CapstoneSalesCRM.Pages.Contacts
 
         public Contact Contact { get; set; }
 
+        //public Activity Activities { get; set; }
+        
+        public List<Activity> Activity { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -32,6 +36,11 @@ namespace CapstoneSalesCRM.Pages.Contacts
                 .Include(c => c.Location)
                 .Include(c => c.Role)
                 .Include(c => c.State).FirstOrDefaultAsync(m => m.ContactID == id);
+
+            Activity = await _context.Activity
+                .Include(c => c.ActivityTask)
+                .Where(m => m.ContactID == id)
+                .ToListAsync();
 
             if (Contact == null)
             {
