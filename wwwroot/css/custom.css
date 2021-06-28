@@ -615,7 +615,7 @@ progress {
     flex-wrap: wrap;
     margin-top: calc(var(--bs-gutter-y) * -1);
     margin-right: calc(var(--bs-gutter-x) / -2);
-    margin-left: calc(var(--bs-gutter-x) / -2)
+    margin-left: auto;
 }
 
     .row > * {
@@ -1077,7 +1077,7 @@ progress {
 
     .col-md-2 {
         flex: 0 0 auto;
-        width: 16.6666666667%
+        width: 16.6666666667%F
     }
 
     .col-md-3 {
@@ -1087,7 +1087,7 @@ progress {
 
     .col-md-4 {
         flex: 0 0 auto;
-        width: 33.3333333333%
+        width: 50%
     }
 
     .col-md-5 {
@@ -1097,7 +1097,7 @@ progress {
 
     .col-md-6 {
         flex: 0 0 auto;
-        width: 50%
+        width: 75%
     }
 
     .col-md-7 {
@@ -2961,6 +2961,7 @@ textarea.form-control-lg {
     background-color: transparent;
     border: 1px solid transparent;
     padding: .375rem .75rem;
+    margin-top: 20px;
     font-size: 1rem;
     border-radius: .35rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
