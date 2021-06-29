@@ -15,7 +15,9 @@ namespace CapstoneSalesCRM.Models
         [Display(Name = "Contact ID")]
         public int ContactID { get; set; }
         [Display(Name = "Date Scheduled")]
-        public DateTime DateScheduled { get; set; }
+        public DateTime? DateScheduled { get; set; }
+        [Display(Name = "Date Created")]
+        public DateTime DateCreated { get; set; }
         //public int UserID { get; set; }
         [Display(Name = "Who To Notify")]
         public string WhoToNotify { get; set; }
@@ -26,7 +28,7 @@ namespace CapstoneSalesCRM.Models
         [Display(Name = "Status")]
         public string Status { get; set; }
         [Display(Name = "Date Completed")]
-        public DateTime DateCompleted { get; set; }
+        public DateTime? DateCompleted { get; set; }
 
 
         //navigation

@@ -14,12 +14,17 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Activity.ActivityTaskID" class="control-label"></label>
-                <select asp-for="Activity.ActivityTaskID" class ="form-control" asp-items="ViewBag.ActivityTaskID"></select>
+                <label asp-for="Activity.ActivityTaskID" class="control-label"> Task Descriptiom</label>
+                <select asp-for="Activity.ActivityTaskID" class="form-control" asp-items="ViewBag.ActivityTaskID"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Activity.ContactID" class="control-label"></label>
-                <select asp-for="Activity.ContactID" class ="form-control" asp-items="ViewBag.ContactID"></select>
+                <label asp-for="Activity.ContactID" class="control-label">Contact Last Name</label>
+                <select asp-for="Activity.ContactID" class="form-control" asp-items="ViewBag.ContactID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.DateCreated" class="control-label"></label>
+                <input asp-for="Activity.DateCreated" class="form-control" />
+                <span asp-validation-for="Activity.DateCreated" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Activity.DateScheduled" class="control-label"></label>

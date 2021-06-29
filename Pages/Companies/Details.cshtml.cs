@@ -20,6 +20,7 @@ namespace CapstoneSalesCRM.Pages.Companies
         }
 
         public Company Company { get; set; }
+        public List<Location> Location { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,6 +31,10 @@ namespace CapstoneSalesCRM.Pages.Companies
 
             Company = await _context.Company
                 .Include(c => c.Industry).FirstOrDefaultAsync(m => m.CompanyID == id);
+
+            Location = await _context.Location
+                .Where(m => m.CompanyID == id)
+                .ToListAsync();
 
             if (Company == null)
             {

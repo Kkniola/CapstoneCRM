@@ -45,6 +45,30 @@
     </dl>
 </div>
 <div>
+    <h4>Company Locations</h4>
+
+    <table >
+        <thead>
+            <tr>      
+                <th>Location Name</th>
+                <th>Location City</th>
+                <th>State ID</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            @foreach (var litem in Model.Location)
+            {
+                <tr>
+                    <th>@Html.DisplayFor(modelItem => litem.LocationName)</th>
+                    <th>@Html.DisplayFor(modelItem => litem.LocationCity)</th>
+                    <th>@Html.DisplayFor(modelItem => litem.StateID)</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
     <a asp-page="./Edit" asp-route-id="@Model.Company.CompanyID">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>

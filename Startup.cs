@@ -32,7 +32,13 @@ namespace CapstoneSalesCRM
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddRazorPages(options =>  options.Conventions.AuthorizeFolder("/Admin"));
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Administrator"));
+            });
+            services.AddRazorPages(options => {
+                options.Conventions.AuthorizeFolder("/Admin", "AdminPolicy");
+                });
         
 
             services.AddDbContext<CapstoneSalesCRMContext>(options =>
