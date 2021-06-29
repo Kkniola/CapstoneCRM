@@ -192,6 +192,38 @@
 </div>
 <div>
     <h4>Activities</h4>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>DateScheduled</th>
+                <th>Task Description</th>
+                <th>Status</th>
+                <th>Notes</th>
+                <th>Date Completed</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var aitem in Model.Activity)
+            {
+
+
+            <tr>
+                <th>@Html.DisplayFor(modelItem => aitem.DateScheduled)</th>
+                <th>@Html.DisplayFor(modelItem => aitem.ActivityTask.TaskDescription)</th>
+                <th>@Html.DisplayFor(modelItem => aitem.Status)</th>
+                <th>@Html.DisplayFor(modelItem => aitem.Notes)</th>
+                <th>@Html.DisplayFor(modelItem => aitem.DateCompleted)</th>
+            </tr>
+
+            }
+        </tbody>
+    </table>
+
+
     <dl>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Activity.Single().DateScheduled)
@@ -224,6 +256,7 @@
             @Html.DisplayFor(model => model.Activity.Single().DateCompleted)
         </dd>
     </dl>
+
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Contact.ContactID">Edit</a> |

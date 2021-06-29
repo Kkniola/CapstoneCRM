@@ -10,6 +10,59 @@
 <h4>Activity</h4>
 <hr />
 
+<div class="row">
+    <div class="col-md-auto">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Activity.ActivityTaskID" class="control-label"> Task Descriptiom</label>
+                <select asp-for="Activity.ActivityTaskID" class="form-control" asp-items="ViewBag.ActivityTaskID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.ContactID" class="control-label">Contact Last Name</label>
+                <select asp-for="Activity.ContactID" class="form-control" asp-items="ViewBag.ContactID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.DateCreated" class="control-label"></label>
+                <input asp-for="Activity.DateCreated" class="form-control" />
+                <span asp-validation-for="Activity.DateCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.DateScheduled" class="control-label"></label>
+                <input asp-for="Activity.DateScheduled" class="form-control" />
+                <span asp-validation-for="Activity.DateScheduled" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.WhoToNotify" class="control-label"></label>
+                <input asp-for="Activity.WhoToNotify" class="form-control" />
+                <span asp-validation-for="Activity.WhoToNotify" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.HowToNotify" class="control-label"></label>
+                <input asp-for="Activity.HowToNotify" class="form-control" />
+                <span asp-validation-for="Activity.HowToNotify" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.Notes" class="control-label"></label>
+                <input asp-for="Activity.Notes" class="form-control" />
+                <span asp-validation-for="Activity.Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.Status" class="control-label"></label>
+                <input asp-for="Activity.Status" class="form-control" />
+                <span asp-validation-for="Activity.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.DateCompleted" class="control-label"></label>
+                <input asp-for="Activity.DateCompleted" class="form-control" />
+                <span asp-validation-for="Activity.DateCompleted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+
+
     <div class="row">
         <div class="col-md-auto">
             <form method="post">
@@ -57,6 +110,7 @@
                 </div>
             </form>
         </div>
+
     </div>
 
 <div>
