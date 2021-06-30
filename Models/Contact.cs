@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,9 +20,11 @@ namespace CapstoneSalesCRM.Models
         public string LastName { get; set; }
         [Display(Name = "Suffix")] 
         public string Suffix { get; set; }
-        [Display(Name = "Prefix")] 
+        [Display(Name = "Prefix")]
+        [EnumDataType(typeof(ContactPrefix))] 
         public string Prefix { get; set; }
-        [Display(Name = "Pronouns")] 
+        [Display(Name = "Pronouns")]
+        [EnumDataType(typeof(ContactPronoun))]
         public string Pronouns { get; set; }
         [Display(Name = "Title")] 
         public string Title { get; set; }
@@ -92,5 +95,23 @@ namespace CapstoneSalesCRM.Models
 
 
         public ICollection<Activity> Activities { get; set; }
+    }
+
+    public enum ContactPrefix
+    {
+        [Display(Name = "Mx.")] Mx,
+        [Display(Name = "Mr.")] Mr,
+        [Display(Name = "Ms.")] Ms,
+        [Display(Name = "Mrs.")] Mrs,
+        [Display(Name = "Dr.")] Dr,
+        Other
+    }
+
+    public enum ContactPronoun
+    {
+        [Display(Name = "They/Them")] They,
+        [Display(Name = "She/Her")] She,
+        [Display(Name = "He/Him")] He,
+        Other
     }
 }

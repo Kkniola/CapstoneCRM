@@ -32,6 +32,9 @@ namespace CapstoneSalesCRM
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Administrator"));
