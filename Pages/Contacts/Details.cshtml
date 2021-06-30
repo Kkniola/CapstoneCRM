@@ -199,6 +199,7 @@
 
             <tr>
                 <th>DateScheduled</th>
+                <th>Date Created</th>
                 <th>Task Description</th>
                 <th>Status</th>
                 <th>Notes</th>
@@ -213,6 +214,7 @@
 
             <tr>
                 <th>@Html.DisplayFor(modelItem => aitem.DateScheduled)</th>
+                <th>@Html.DisplayFor(modelItem => aitem.DateCreated)</th>
                 <th>@Html.DisplayFor(modelItem => aitem.ActivityTask.TaskDescription)</th>
                 <th>@Html.DisplayFor(modelItem => aitem.Status)</th>
                 <th>@Html.DisplayFor(modelItem => aitem.Notes)</th>
@@ -224,7 +226,7 @@
     </table>
 
 
-    <dl>
+    @*<dl>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Activity.Single().DateScheduled)
         </dt>
@@ -255,7 +257,7 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Activity.Single().DateCompleted)
         </dd>
-    </dl>
+    </dl>*@
 
 </div>
 <div>

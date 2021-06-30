@@ -7782,6 +7782,11 @@ textarea.form-control-lg {
     color: #4e73df !important
 }
 
+.text-table {
+    color: gray;
+    font-weight:100
+}
+
 .text-secondary {
     color: #858796 !important
 }

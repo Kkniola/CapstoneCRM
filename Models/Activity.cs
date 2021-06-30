@@ -26,7 +26,8 @@ namespace CapstoneSalesCRM.Models
         [Display(Name = "Notes")]
         public string Notes { get; set; }
         [Display(Name = "Status")]
-        public string Status { get; set; }
+        [EnumDataType(typeof(ActivityStatus))]
+        public ActivityStatus Status { get; set; }
         [Display(Name = "Date Completed")]
         public DateTime? DateCompleted { get; set; }
 
@@ -38,5 +39,11 @@ namespace CapstoneSalesCRM.Models
 
 
         //public User Users { get; set; }
+    }
+
+    public enum ActivityStatus
+    {
+        Complete,
+        Incomplete
     }
 }

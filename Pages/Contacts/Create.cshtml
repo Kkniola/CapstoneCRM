@@ -30,13 +30,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="Contact.Prefix" class="control-label"></label>
-                <input asp-for="Contact.Prefix" class="form-control" />
-                <span asp-validation-for="Contact.Prefix" class="text-danger"></span>
+                <select asp-for="Contact.Prefix" class="form-control" asp-items="Html.GetEnumSelectList<CapstoneSalesCRM.Models.ContactPrefix>()"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Contact.Pronouns" class="control-label"></label>
-                <input asp-for="Contact.Pronouns" class="form-control" />
-                <span asp-validation-for="Contact.Pronouns" class="text-danger"></span>
+                <select asp-for="Contact.Pronouns" class="form-control" asp-items="Html.GetEnumSelectList<CapstoneSalesCRM.Models.ContactPronoun>()"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Contact.Title" class="control-label"></label>
