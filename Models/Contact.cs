@@ -22,15 +22,17 @@ namespace CapstoneSalesCRM.Models
         public string Suffix { get; set; }
         [Display(Name = "Prefix")]
         [EnumDataType(typeof(ContactPrefix))] 
-        public string Prefix { get; set; }
+        public ContactPrefix Prefix { get; set; }
         [Display(Name = "Pronouns")]
         [EnumDataType(typeof(ContactPronoun))]
-        public string Pronouns { get; set; }
+        public ContactPronoun Pronouns { get; set; }
         [Display(Name = "Title")] 
         public string Title { get; set; }
         [Display(Name = "Role ID")] 
         public int RoleID { get; set; }
         [Display(Name = "Date of Birth")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
         [Display(Name = "Email")] 
         public string Email { get; set; }
@@ -67,14 +69,16 @@ namespace CapstoneSalesCRM.Models
         public int LocationID { get; set; }
         [Display(Name = "Source ID")] 
         public string SourceID { get; set; }
-        [Display(Name = "Created By")] 
+        [Display(Name = "Created By")]
         public string CreatedBy { get; set; }
         [Display(Name = "Date Created")]
-
-        [HiddenInput] 
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime DateCreated { get; set; } 
         
-        [Display(Name = "Last Date Contacted")] 
+        [Display(Name = "Last Date Contacted")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime LastDateContacted { get; set; }
         [Display(Name = "Contact Type ID")] 
         public int ContactTypeID { get; set; }
@@ -92,6 +96,8 @@ namespace CapstoneSalesCRM.Models
 
         public State State { get; set; }
         //public Activity Activity { get; set; }
+
+        public Company  Company { get; set; }
 
 
         public ICollection<Activity> Activities { get; set; }

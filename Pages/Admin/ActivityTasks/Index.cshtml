@@ -4,6 +4,10 @@
 @{
     ViewData["Title"] = "Tasks";
 }
+<head>
+    <link rel="stylesheet" href="/css/custom.css" />
+    <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+</head>
 
 <h1>Tasks</h1>
 
@@ -26,9 +30,9 @@
                 @Html.DisplayFor(modelItem => item.TaskDescription)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ActivityTaskID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ActivityTaskID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ActivityTaskID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.ActivityTaskID"><i class="far fa-edit"></i></a> |
+                <a asp-page="./Details" asp-route-id="@item.ActivityTaskID"><i class="far fa-address-card"></i></a> |
+                <a asp-page="./Delete" asp-route-id="@item.ActivityTaskID"><i class="far fa-trash-alt"></i></a>
             </td>
         </tr>
 }

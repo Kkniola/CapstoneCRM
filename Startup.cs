@@ -35,13 +35,13 @@ namespace CapstoneSalesCRM
 
 
 
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Administrator"));
-            });
-            services.AddRazorPages(options => {
-                options.Conventions.AuthorizeFolder("/Admin", "AdminPolicy");
-                });
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Administrator"));
+            //});
+            //services.AddRazorPages(options => {
+            //    options.Conventions.AuthorizeFolder("/Admin", "AdminPolicy");
+            //    });
         
 
             services.AddDbContext<CapstoneSalesCRMContext>(options =>

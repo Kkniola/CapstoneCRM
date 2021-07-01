@@ -6,7 +6,8 @@
 <html>
 <head>
     <link rel="stylesheet" href="/css/custom.css" />
-    </head>
+    <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+</head>
 <body>
 
                     
@@ -89,20 +90,23 @@
                             <table>
                                 @foreach (var ALitem in Model.ActivityList)
                                 {
-                                    <tr>
-                                        <th>
-                                            @Html.DisplayFor(m => ALitem.Contact.FirstName)&nbsp;
-                                        </th>
-                                        <th>
-                                            @Html.DisplayFor(m => ALitem.Contact.LastName)&nbsp;
-                                        </th>
-                                        <th>
-                                            @Html.DisplayFor(m => ALitem.ActivityTask.TaskDescription)&nbsp;
-                                        </th>
-                                        <th>
-                                            @Html.DisplayFor(m => ALitem.DateScheduled)&nbsp;
-                                        </th>
-                                    </tr>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayFor(m => ALitem.Contact.FirstName)&nbsp;
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(m => ALitem.Contact.LastName)&nbsp;
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(m => ALitem.ActivityTask.TaskDescription)&nbsp;
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(m => ALitem.DateScheduled)&nbsp;
+                                    </th>
+                                    <th>
+                                        <a asp-page="/Activities/Details" asp-route-id="@ALitem.ActivityID"><i class="fas fa-info-circle"></i></a> 
+                                    </th>
+                                </tr>
                                 }
                             </table>
                         </div>
@@ -132,6 +136,9 @@
                                         </th>
                                         <th>
                                             @Html.DisplayFor(m => CUitem.Location.LocationName)&nbsp;
+                                        </th>
+                                        <th>
+                                            <a asp-page="/Contacts/Details" asp-route-id="@CUitem.ContactID"><i class="far fa-address-card"></i></a> 
                                         </th>
                                     </tr>
                                 }

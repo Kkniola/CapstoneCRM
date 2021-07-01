@@ -25,6 +25,7 @@ namespace CapstoneSalesCRM.Pages.Contacts
         ViewData["RoleID"] = new SelectList(_context.Role, "RoleID", "RoleDescription");
         ViewData["StateID"] = new SelectList(_context.State, "StateID", "StateName");
         ViewData["SourceID"] = new SelectList(_context.Source, "SourceID", "SourceDescription");
+
             return Page();
         }
 

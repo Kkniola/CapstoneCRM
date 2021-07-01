@@ -4,6 +4,10 @@
 @{
     ViewData["Title"] = "Sources";
 }
+<head>
+    <link rel="stylesheet" href="/css/custom.css" />
+    <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+</head>
 
 <h1>Sources</h1>
 
@@ -26,9 +30,9 @@
                 @Html.DisplayFor(modelItem => item.SourceDescription)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.SourceID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.SourceID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.SourceID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.SourceID"><i class="far fa-edit"></i></a> |
+                <a asp-page="./Details" asp-route-id="@item.SourceID"><i class="far fa-address-card"></i></a> |
+                <a asp-page="./Delete" asp-route-id="@item.SourceID"><i class="far fa-trash-alt"></i></a>
             </td>
         </tr>
 }

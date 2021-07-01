@@ -1,8 +1,12 @@
 ﻿@page
 @model CapstoneSalesCRM.Pages.Contacts.CreateModel
 
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 @{
     ViewData["Title"] = "Create";
+    DateTime todaysDate = DateTime.Today;
 }
 
 <h1>Create</h1>
@@ -12,6 +16,10 @@
 <div class="row">
     <div class="col-md-auto">
         <form method="post">
+
+            <input type="hidden" asp-for="Contact.DateCreated" value="@todaysDate" />
+            <input type="hidden" asp-for="Contact.CreatedBy" value="@User.Identity.Name" />
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Contact.FirstName" class="control-label"></label>
@@ -132,18 +140,18 @@
             <div class="form-group">
                 <label asp-for="Contact.SourceID" class="control-label"></label>
                 <select asp-for="Contact.SourceID" class="form-control" asp-items="ViewBag.SourceID"></select>
-              
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.CreatedBy" class="control-label"></label>
-                <input asp-for="Contact.CreatedBy" class="form-control" />
-                <span asp-validation-for="Contact.CreatedBy" class="text-danger"></span>
+
             </div>
             @*<div class="form-group">
-                <label asp-for="Contact.DateCreated" class="control-label"></label>
-                <input asp-for="Contact.DateCreated" class="form-control" />
-                <span asp-validation-for="Contact.DateCreated" class="text-danger"></span>
-            </div>*@
+                    <label asp-for="Contact.CreatedBy" class="control-label"></label>
+                    <input asp-for="Contact.CreatedBy" class="form-control" />
+                    <span asp-validation-for="Contact.CreatedBy" class="text-danger"></span>
+                </div>*@
+            @*<div class="form-group">
+                    <label asp-for="Contact.DateCreated" class="control-label"></label>
+                    <input asp-for="Contact.DateCreated" class="form-control" />
+                    <span asp-validation-for="Contact.DateCreated" class="text-danger"></span>
+                </div>*@
             <div class="form-group">
                 <label asp-for="Contact.LastDateContacted" class="control-label"></label>
                 <input asp-for="Contact.LastDateContacted" class="form-control" />

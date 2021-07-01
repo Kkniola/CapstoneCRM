@@ -4,6 +4,10 @@
 @{
     ViewData["Title"] = "Contacts";
 }
+<head>
+    <link rel="stylesheet" href="/css/custom.css" />
+    <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+</head>
 
 <h1>Contacts</h1>
 
@@ -14,6 +18,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Contact[0].Prefix)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Contact[0].FirstName)
             </th>
             <th>
@@ -22,39 +29,37 @@
             <th>
                 @Html.DisplayNameFor(model => model.Contact[0].Suffix)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].Prefix)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].Pronouns)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].DOB)
-            </th>
+
+            @*<th>
+            @Html.DisplayNameFor(model => model.Contact[0].Pronouns)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact[0].Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact[0].DOB)
+        </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Contact[0].Email)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].HomeAddress1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].HomeAddress2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].HomeCity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].HomeZipCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].Country)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].HomePhone)
-            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.Contact[0].HomeAddress1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact[0].HomeAddress2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact[0].HomeCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact[0].HomeZipCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact[0].Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact[0].HomePhone)
+        </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Contact[0].CellPhone)
             </th>
@@ -62,29 +67,14 @@
                 @Html.DisplayNameFor(model => model.Contact[0].WorkPhone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Contact[0].LinkedIn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].Facebook)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Contact[0].ContactMethod)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].EmergencyContactName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].EmergencyContactNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact[0].SourceID)
-            </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Contact[0].CreatedBy)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Contact[0].DateCreated)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Contact[0].LastDateContacted)
             </th>
@@ -96,8 +86,12 @@
                 @Html.DisplayNameFor(model => model.Contact[0].Role)
             </th>
             <th>
+                Company
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Contact[0].Location)
             </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Contact[0].State)
             </th>
@@ -108,6 +102,9 @@
 @foreach (var item in Model.Contact) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.Prefix)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>
             <td>
@@ -116,39 +113,37 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Suffix)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prefix)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pronouns)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DOB)
-            </td>
+
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Pronouns)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HomeAddress1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HomeAddress2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HomeCity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HomeZipCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Country)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HomePhone)
-            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.HomeAddress1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomeAddress2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomeCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomeZipCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomePhone)
+        </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.CellPhone)
             </td>
@@ -156,29 +151,14 @@
                 @Html.DisplayFor(modelItem => item.WorkPhone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LinkedIn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Facebook)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.ContactMethod)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmergencyContactName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmergencyContactNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Source.SourceDescription)
-            </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.CreatedBy)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateCreated)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.LastDateContacted)
             </td>
@@ -190,15 +170,18 @@
                 @Html.DisplayFor(modelItem => item.Role.RoleDescription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Location.LocationCity)
+                @Html.DisplayFor(modelItem => item.Company.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location.LocationName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.State.StateName)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ContactID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ContactID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ContactID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.ContactID"><i class="far fa-edit"></i></a> |
+                <a asp-page="./Details" asp-route-id="@item.ContactID"><i class="far fa-address-card"></i></a> |
+                <a asp-page="./Delete" asp-route-id="@item.ContactID"><i class="far fa-trash-alt"></i></a>
             </td>
         </tr>
 }
