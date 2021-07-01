@@ -1,8 +1,12 @@
 ﻿@page
 @model CapstoneSalesCRM.Pages.Activities.CreateModel
 
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 @{
     ViewData["Title"] = "Create";
+    DateTime todaysDate = DateTime.Today;
 }
 
 <h1>Create</h1>
@@ -13,6 +17,10 @@
 <div class="row">
     <div class="col-md-auto">
         <form method="post">
+
+            <input type="hidden" asp-for="Activity.DateCreated" value="@todaysDate" />
+            <input type="hidden" asp-for="Activity.CreatedBy" value="@User.Identity.Name" />
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Activity.ActivityTaskID" class="control-label"> Task Descriptiom</label>
@@ -22,11 +30,7 @@
                 <label asp-for="Activity.ContactID" class="control-label">Contact Last Name</label>
                 <select asp-for="Activity.ContactID" class="form-control" asp-items="ViewBag.ContactID"></select>
             </div>
-            <div class="form-group">
-                <label asp-for="Activity.DateCreated" class="control-label"></label>
-                <input asp-for="Activity.DateCreated" class="form-control" />
-                <span asp-validation-for="Activity.DateCreated" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <label asp-for="Activity.DateScheduled" class="control-label"></label>
                 <input asp-for="Activity.DateScheduled" class="form-control" />
@@ -50,7 +54,7 @@
             <div class="form-group">
                 <label asp-for="Activity.Status" class="control-label"></label>
                 <select asp-for="Activity.Status" class="form-control" asp-items="Html.GetEnumSelectList<CapstoneSalesCRM.Models.ActivityStatus>()"></select>
-                
+
             </div>
             <div class="form-group">
                 <label asp-for="Activity.DateCompleted" class="control-label"></label>
@@ -63,9 +67,10 @@
         </form>
 
 
-   
 
-    </div></div>
+
+    </div>
+</div>
 
 <div>
     <a asp-page="Index">Back to List</a>

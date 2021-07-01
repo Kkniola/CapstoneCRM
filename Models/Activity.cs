@@ -15,10 +15,15 @@ namespace CapstoneSalesCRM.Models
         [Display(Name = "Contact ID")]
         public int ContactID { get; set; }
         [Display(Name = "Date Scheduled")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime? DateScheduled { get; set; }
         [Display(Name = "Date Created")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime DateCreated { get; set; }
-        //public int UserID { get; set; }
+        [Display(Name = "Created By")]
+        public string CreatedBy { get; set; }
         [Display(Name = "Who To Notify")]
         public string WhoToNotify { get; set; }
         [Display(Name = "How To Notify")]
@@ -29,6 +34,8 @@ namespace CapstoneSalesCRM.Models
         [EnumDataType(typeof(ActivityStatus))]
         public ActivityStatus Status { get; set; }
         [Display(Name = "Date Completed")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime? DateCompleted { get; set; }
 
 

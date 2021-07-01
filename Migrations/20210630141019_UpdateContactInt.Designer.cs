@@ -4,14 +4,16 @@ using CapstoneSalesCRM.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CapstoneSalesCRM.Migrations
 {
     [DbContext(typeof(CapstoneSalesCRMContext))]
-    partial class CapstoneSalesCRMContextModelSnapshot : ModelSnapshot
+    [Migration("20210630141019_UpdateContactInt")]
+    partial class UpdateContactInt
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,9 +33,6 @@ namespace CapstoneSalesCRM.Migrations
 
                     b.Property<int>("ContactID")
                         .HasColumnType("int");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("DateCompleted")
                         .HasColumnType("datetime2");
@@ -122,9 +121,6 @@ namespace CapstoneSalesCRM.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CompanyID")
-                        .HasColumnType("int");
-
                     b.Property<string>("ContactMethod")
                         .HasColumnType("nvarchar(max)");
 
@@ -188,11 +184,11 @@ namespace CapstoneSalesCRM.Migrations
                     b.Property<int>("LocationID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Prefix")
-                        .HasColumnType("int");
+                    b.Property<string>("Prefix")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Pronouns")
-                        .HasColumnType("int");
+                    b.Property<string>("Pronouns")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RoleID")
                         .HasColumnType("int");
@@ -216,8 +212,6 @@ namespace CapstoneSalesCRM.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ContactID");
-
-                    b.HasIndex("CompanyID");
 
                     b.HasIndex("ContactTypeID1");
 
@@ -369,10 +363,6 @@ namespace CapstoneSalesCRM.Migrations
 
             modelBuilder.Entity("CapstoneSalesCRM.Models.Contact", b =>
                 {
-                    b.HasOne("CapstoneSalesCRM.Models.Company", "Company")
-                        .WithMany()
-                        .HasForeignKey("CompanyID");
-
                     b.HasOne("CapstoneSalesCRM.Models.ContactType", null)
                         .WithMany("Contacts")
                         .HasForeignKey("ContactTypeID1");

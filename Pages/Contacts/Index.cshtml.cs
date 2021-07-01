@@ -20,13 +20,25 @@ namespace CapstoneSalesCRM.Pages.Contacts
         }
 
         public IList<Contact> Contact { get;set; }
+        public IList<Location> Locations{ get; set; }
 
         public async Task OnGetAsync()
         {
+
             Contact = await _context.Contact
                 .Include(c => c.Location)
                 .Include(c => c.Role)
                 .Include(c => c.State).ToListAsync();
+
+            Locations = await _context.Location
+                .Include(c => c.Company)
+                .ToListAsync();
+            
+            foreach(Contact contact in Contact)
+            {
+                contact.Company = Locations.FirstOrDefault(l => l.LocationID == contact.LocationID).Company;
+            }
+                
         }
     }
 }

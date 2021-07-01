@@ -163,6 +163,7 @@
             @Html.DisplayFor(model => model.Contact.LastDateContacted)
         </dd>
 
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Contact.Comment)
         </dt>
@@ -176,6 +177,12 @@
             @Html.DisplayFor(model => model.Contact.Role.RoleID)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contact.Company)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact.Company.CompanyName)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Contact.Location)
         </dt>
         <dd class="col-sm-10">
@@ -187,7 +194,7 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Contact.State.StateID)
         </dd>
-      
+
     </dl>
 </div>
 <div>
