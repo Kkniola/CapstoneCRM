@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CapstoneSalesCRM.Migrations
 {
     [DbContext(typeof(CapstoneSalesCRMContext))]
-    [Migration("20210628231306_NullDateTime")]
-    partial class NullDateTime
+    [Migration("20210630214733_FirstDB")]
+    partial class FirstDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,6 +37,9 @@ namespace CapstoneSalesCRM.Migrations
                     b.Property<DateTime?>("DateCompleted")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime?>("DateScheduled")
                         .HasColumnType("datetime2");
 
@@ -46,8 +49,8 @@ namespace CapstoneSalesCRM.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<string>("WhoToNotify")
                         .HasColumnType("nvarchar(max)");

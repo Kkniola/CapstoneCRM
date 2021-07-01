@@ -10,7 +10,7 @@
 <h4>Company</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-auto">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Company.CompanyID" />
@@ -51,6 +51,9 @@
     <a asp-page="./Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<asp:Hyperlink Runat="server" NavigateUrl="#" onclick="javascript:history.go(1);return false;">
+    BACK<asp:Hyperlink>
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CapstoneSalesCRM.Migrations
 {
-    public partial class RevDB : Migration
+    public partial class FirstDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -90,7 +90,6 @@ namespace CapstoneSalesCRM.Migrations
                     CompanyID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CompanyName = table.Column<string>(nullable: true),
-                    LocationID = table.Column<int>(nullable: false),
                     IndustryID = table.Column<int>(nullable: false),
                     Website = table.Column<string>(nullable: true),
                     LinkedIn = table.Column<string>(nullable: true),
@@ -113,6 +112,7 @@ namespace CapstoneSalesCRM.Migrations
                 {
                     LocationID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    LocationName = table.Column<string>(nullable: true),
                     CompanyID = table.Column<int>(nullable: false),
                     LocationAddress1 = table.Column<string>(nullable: true),
                     LocationAddress2 = table.Column<string>(nullable: true),
@@ -220,12 +220,13 @@ namespace CapstoneSalesCRM.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ActivityTaskID = table.Column<int>(nullable: false),
                     ContactID = table.Column<int>(nullable: false),
-                    DateScheduled = table.Column<DateTime>(nullable: false),
+                    DateScheduled = table.Column<DateTime>(nullable: true),
+                    DateCreated = table.Column<DateTime>(nullable: false),
                     WhoToNotify = table.Column<string>(nullable: true),
                     HowToNotify = table.Column<string>(nullable: true),
                     Notes = table.Column<string>(nullable: true),
-                    Status = table.Column<string>(nullable: true),
-                    DateCompleted = table.Column<DateTime>(nullable: false)
+                    Status = table.Column<int>(nullable: false),
+                    DateCompleted = table.Column<DateTime>(nullable: true)
                 },
                 constraints: table =>
                 {
