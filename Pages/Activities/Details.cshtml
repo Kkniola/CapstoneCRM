@@ -12,6 +12,18 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.Contact)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.Contact.FirstName) @Html.DisplayFor(model => model.Activity.Contact.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.ActivityTask)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.ActivityTask.TaskDescription)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Activity.DateScheduled)
         </dt>
         <dd class="col-sm-10">
@@ -48,16 +60,16 @@
             @Html.DisplayFor(model => model.Activity.DateCompleted)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Activity.Contact)
+            @Html.DisplayNameFor(model => model.Activity.DateCreated)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Activity.Contact.ContactID)
+            @Html.DisplayFor(model => model.Activity.DateCreated)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Activity.ActivityTask)
+            @Html.DisplayNameFor(model => model.Activity.CreatedBy)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Activity.ActivityTask.ActivityTaskID)
+            @Html.DisplayFor(model => model.Activity.CreatedBy)
         </dd>
     </dl>
 </div>
