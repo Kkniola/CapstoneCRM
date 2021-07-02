@@ -134,7 +134,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Contact.SourceID" class="control-label"></label>
-                <input asp-for="Contact.SourceID" class="form-control" />
+                <select asp-for="Contact.SourceID" class="form-control" asp-items="ViewBag.SourceID"></select>
                 <span asp-validation-for="Contact.SourceID" class="text-danger"></span>
             </div>
 

@@ -36,7 +36,8 @@ namespace CapstoneSalesCRM.Pages.Contacts
             Contact = await _context.Contact
                 .Include(c => c.Location)
                 .Include(c => c.Role)
-                .Include(c => c.State).FirstOrDefaultAsync(m => m.ContactID == id);
+                .Include(c => c.State)
+                .Include(c => c.Source).FirstOrDefaultAsync(m => m.ContactID == id);
 
             Activity = await _context.Activity
                 .Include(c => c.ActivityTask)
