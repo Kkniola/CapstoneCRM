@@ -33,15 +33,17 @@ namespace CapstoneSalesCRM.Pages.Contacts
             Contact = await _context.Contact
                 .Include(c => c.Location)
                 .Include(c => c.Role)
-                .Include(c => c.State).FirstOrDefaultAsync(m => m.ContactID == id);
+                .Include(c => c.State)
+                .Include(c => c.Source).FirstOrDefaultAsync(m => m.ContactID == id);
 
             if (Contact == null)
             {
                 return NotFound();
             }
-           ViewData["LocationID"] = new SelectList(_context.Location, "LocationID", "LocationID");
-           ViewData["RoleID"] = new SelectList(_context.Role, "RoleID", "RoleID");
-           ViewData["StateID"] = new SelectList(_context.State, "StateID", "StateID");
+           ViewData["LocationID"] = new SelectList(_context.Location, "LocationID", "LocationName");
+           ViewData["RoleID"] = new SelectList(_context.Role, "RoleID", "RoleDescription");
+           ViewData["StateID"] = new SelectList(_context.State, "StateID", "StateName");
+            ViewData["SourceID"] = new SelectList(_context.Source, "SourceID", "SourceDescription");
             return Page();
         }
 

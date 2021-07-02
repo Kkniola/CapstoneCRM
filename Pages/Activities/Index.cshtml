@@ -68,7 +68,15 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateCompleted)
+                @if (item.DateCompleted == null)
+                {
+                    @:Not Completed
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.DateCompleted)
+                }
+
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ActivityID"><i class="far fa-edit"></i></a> |

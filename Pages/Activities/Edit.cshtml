@@ -46,14 +46,23 @@
             </div>
             <div class="form-group">
                 <label asp-for="Activity.Status" class="control-label"></label>
-                <input asp-for="Activity.Status" class="form-control" />
                 <select asp-for="Activity.Status" class="form-control" asp-items="Html.GetEnumSelectList<CapstoneSalesCRM.Models.ActivityStatus>()"></select>
+
+                @if (Model.Activity.Status == Models.ActivityStatus.Complete)
+                {
+            <div class="visible">
+                <div class="form-group">
+                    <label asp-for="Activity.DateCompleted" class="control-label"></label>
+                    <input asp-for="Activity.DateCompleted" class="form-control" />
+                    <span asp-validation-for="Activity.DateCompleted" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Activity.DateCompleted" class="control-label"></label>
-                <input asp-for="Activity.DateCompleted" class="form-control" />
-                <span asp-validation-for="Activity.DateCompleted" class="text-danger"></span>
+                }
+
+
             </div>
+
+           
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

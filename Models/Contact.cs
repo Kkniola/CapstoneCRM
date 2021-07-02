@@ -68,7 +68,7 @@ namespace CapstoneSalesCRM.Models
         [Display(Name = "Location ID")] 
         public int LocationID { get; set; }
         [Display(Name = "Source ID")] 
-        public string SourceID { get; set; }
+        public int SourceID { get; set; }
         [Display(Name = "Created By")]
         public string CreatedBy { get; set; }
         [Display(Name = "Date Created")]
