@@ -22,6 +22,7 @@ namespace CapstoneSalesCRM.Pages.Contacts
 
         [BindProperty]
         public Contact Contact { get; set; }
+        public List<Location> Locations { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -36,6 +37,12 @@ namespace CapstoneSalesCRM.Pages.Contacts
                 .Include(c => c.State)
                 .Include(c => c.Source).FirstOrDefaultAsync(m => m.ContactID == id);
 
+            Locations = await _context.Location
+                .Include(c => c.Company)
+                .ToListAsync();
+
+            Contact.Company = Locations.FirstOrDefault(l => l.LocationID == Contact.LocationID).Company;
+
             if (Contact == null)
             {
                 return NotFound();
@@ -44,6 +51,7 @@ namespace CapstoneSalesCRM.Pages.Contacts
            ViewData["RoleID"] = new SelectList(_context.Role, "RoleID", "RoleDescription");
            ViewData["StateID"] = new SelectList(_context.State, "StateID", "StateName");
             ViewData["SourceID"] = new SelectList(_context.Source, "SourceID", "SourceDescription");
+            ViewData["CompanyName"] = new SelectList(_context.Company, "CompanyName", "CompanyName");
             return Page();
         }
 

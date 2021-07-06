@@ -25,7 +25,10 @@ namespace CapstoneSalesCRM.Pages.Locations
         {
             Location = await _context.Location
                 .Include(l => l.Company)
-                .Include(l => l.State).ToListAsync();
+                .Include(l => l.State)
+                .OrderBy(l => l.Company.CompanyName)
+                .ThenBy(l => l.LocationName)
+                .ToListAsync();
         }
     }
 }

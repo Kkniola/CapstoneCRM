@@ -42,6 +42,7 @@ namespace CapstoneSalesCRM.Pages
             ActivityList = await _db.Activity
                 .Include(c => c.ActivityTask)
                 .Where( c => c.Status == ActivityStatus.Incomplete)
+                .Where(c => c.DateScheduled >= DateTime.Now)
                 .OrderBy(c => c.DateScheduled)
                 .Take(10).ToListAsync();
                 

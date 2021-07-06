@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using CapstoneSalesCRM.Data;
 using CapstoneSalesCRM.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace CapstoneSalesCRM.Pages.Activities
 {
@@ -44,6 +45,16 @@ namespace CapstoneSalesCRM.Pages.Activities
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+    }
+
+    public class MyDateAttribute : ValidationAttribute
+    {
+        public override bool IsValid(object value)// Return a boolean value: true == IsValid, false != IsValid
+        {
+            DateTime d = Convert.ToDateTime(value);
+            return d >= DateTime.Now; //Dates Greater than or equal to today are valid (true)
+
         }
     }
 }

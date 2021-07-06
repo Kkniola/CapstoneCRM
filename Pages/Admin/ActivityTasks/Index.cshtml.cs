@@ -23,7 +23,9 @@ namespace CapstoneSalesCRM.Pages.ActivityTasks
 
         public async Task OnGetAsync()
         {
-            ActivityTask = await _context.ActivityTask.ToListAsync();
+            ActivityTask = await _context.ActivityTask
+                .OrderBy(c => c.TaskDescription)
+                .ToListAsync();
         }
     }
 }

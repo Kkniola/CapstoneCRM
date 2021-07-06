@@ -21,11 +21,13 @@ namespace CapstoneSalesCRM.Pages.ActivityTasks
 
         public IActionResult OnGet()
         {
+
             return Page();
         }
 
         [BindProperty]
         public ActivityTask ActivityTask { get; set; }
+
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -39,7 +41,12 @@ namespace CapstoneSalesCRM.Pages.ActivityTasks
             _context.ActivityTask.Add(ActivityTask);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            
+            
+            return RedirectToPage("./Index"); 
+            
+            
         }
     }
+   
 }

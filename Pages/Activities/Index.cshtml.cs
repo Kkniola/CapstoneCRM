@@ -25,7 +25,8 @@ namespace CapstoneSalesCRM.Pages.Activities
         {
             Activity = await _context.Activity
                 .Include(a => a.ActivityTask)
-                .Include(a => a.Contact).ToListAsync();
+                .Include(a => a.Contact)
+                .OrderBy(a => a.DateScheduled).ToListAsync();
         }
     }
 }

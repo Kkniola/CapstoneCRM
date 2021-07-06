@@ -23,7 +23,9 @@ namespace CapstoneSalesCRM.Pages.Industries
 
         public async Task OnGetAsync()
         {
-            Industry = await _context.Industry.ToListAsync();
+            Industry = await _context.Industry
+                .OrderBy(c => c.Description)
+                .ToListAsync();
         }
     }
 }
