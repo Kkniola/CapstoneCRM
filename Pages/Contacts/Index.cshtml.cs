@@ -28,7 +28,9 @@ namespace CapstoneSalesCRM.Pages.Contacts
             Contact = await _context.Contact
                 .Include(c => c.Location)
                 .Include(c => c.Role)
-                .Include(c => c.State).ToListAsync();
+                .Include(c => c.State)
+                .OrderBy(c =>c.LastName)
+                .ToListAsync();
 
             Locations = await _context.Location
                 .Include(c => c.Company)

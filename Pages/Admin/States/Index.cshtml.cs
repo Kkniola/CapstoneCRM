@@ -23,7 +23,9 @@ namespace CapstoneSalesCRM.Pages.States
 
         public async Task OnGetAsync()
         {
-            State = await _context.State.ToListAsync();
+            State = await _context.State
+                .OrderBy(c => c.StateID)
+                .ToListAsync();
         }
     }
 }

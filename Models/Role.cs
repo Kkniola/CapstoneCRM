@@ -8,7 +8,7 @@ namespace CapstoneSalesCRM.Models
 {
     public class Role
     {
-        [Display(Name = "Role ID")] 
+        [Display(Name = "Role")] 
         public int RoleID { get; set; }
         [Display(Name = "Description")] 
         public string RoleDescription { get; set; }

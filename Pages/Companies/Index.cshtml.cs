@@ -24,7 +24,9 @@ namespace CapstoneSalesCRM.Pages.Companies
         public async Task OnGetAsync()
         {
             Company = await _context.Company
-                .Include(c => c.Industry).ToListAsync();
+                .Include(c => c.Industry)
+                .OrderBy(c => c.CompanyName)
+                .ToListAsync();
         }
     }
 }

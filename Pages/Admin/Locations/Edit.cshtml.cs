@@ -39,7 +39,8 @@ namespace CapstoneSalesCRM.Pages.Locations
                 return NotFound();
             }
            ViewData["CompanyID"] = new SelectList(_context.Company, "CompanyID", "CompanyID");
-           ViewData["StateID"] = new SelectList(_context.Set<State>(), "StateID", "StateID");
+            ViewData["CompanyName"] = new SelectList(_context.Company, "CompanyName", "CompanyName");
+            ViewData["StateID"] = new SelectList(_context.Set<State>(), "StateID", "StateID");
             return Page();
         }
 

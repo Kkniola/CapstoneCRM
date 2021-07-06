@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapstoneSalesCRM.Pages.Activities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -17,10 +18,12 @@ namespace CapstoneSalesCRM.Models
         [Display(Name = "Date Scheduled")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [DataType(DataType.Date)]
+        [MyDate(ErrorMessage = "Invalid date")]
         public DateTime? DateScheduled { get; set; }
         [Display(Name = "Date Created")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [DataType(DataType.Date)]
+        [MyDate(ErrorMessage = "Invalid date")]
         public DateTime DateCreated { get; set; }
         [Display(Name = "Created By")]
         public string CreatedBy { get; set; }
@@ -36,6 +39,7 @@ namespace CapstoneSalesCRM.Models
         [Display(Name = "Date Completed")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [DataType(DataType.Date)]
+        [MyDate(ErrorMessage = "Invalid date")]
         public DateTime? DateCompleted { get; set; }
 
 

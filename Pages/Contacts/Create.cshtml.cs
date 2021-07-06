@@ -21,7 +21,7 @@ namespace CapstoneSalesCRM.Pages.Contacts
 
         public IActionResult OnGet()
         {
-        ViewData["LocationID"] = new SelectList(_context.Location, "LocationID", "LocationCity");
+        ViewData["LocationName"] = new SelectList(_context.Location, "LocationName", "LocationName");
         ViewData["RoleID"] = new SelectList(_context.Role, "RoleID", "RoleDescription");
         ViewData["StateID"] = new SelectList(_context.State, "StateID", "StateName");
         ViewData["SourceID"] = new SelectList(_context.Source, "SourceID", "SourceDescription");

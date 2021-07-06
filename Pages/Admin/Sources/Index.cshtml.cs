@@ -23,7 +23,9 @@ namespace CapstoneSalesCRM.Pages.Sources
 
         public async Task OnGetAsync()
         {
-            Source = await _context.Source.ToListAsync();
+            Source = await _context.Source
+                .OrderBy(c => c.SourceDescription)
+                .ToListAsync();
         }
     }
 }

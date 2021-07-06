@@ -8,7 +8,7 @@ namespace CapstoneSalesCRM.Models
 {
     public class Source
     {
-        [Display(Name = "Source ID")] 
+        [Display(Name = "Source")] 
         public int SourceID { get; set; }
         [Display(Name = "Description")] 
         public string SourceDescription { get; set; }
