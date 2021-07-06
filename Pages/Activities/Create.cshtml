@@ -21,16 +21,17 @@
 
             <input type="hidden" asp-for="Activity.DateCreated" value="@todaysDate" />
             <input type="hidden" asp-for="Activity.CreatedBy" value="@User.Identity.Name" />
+            <input type="hidden" asp-for="Activity.ContactID" value="@ViewBag.ContactID" />
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Activity.ActivityTaskID" class="control-label"> Task Descriptiom</label>
+                <label asp-for="Activity.ActivityTaskID" class="control-label">Task Description</label>
                 <select asp-for="Activity.ActivityTaskID" class="form-control" asp-items="ViewBag.ActivityTaskID"></select>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="Activity.ContactID" class="control-label">Contact Last Name</label>
                 <select asp-for="Activity.ContactID" class="form-control" asp-items="ViewBag.ContactID"></select>
-            </div>
+            </div>*@
 
             <div class="form-group">
                 <label asp-for="Activity.DateScheduled" class="control-label"></label>
