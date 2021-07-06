@@ -9,35 +9,46 @@
     <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
 </head>
 
-<h1>States</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.State[0].StateName)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.State) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.StateName)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.StateID"><i class="far fa-edit"></i></a> |
-                <a asp-page="./Details" asp-route-id="@item.StateID"><i class="far fa-address-card"></i></a> |
-                <a asp-page="./Delete" asp-route-id="@item.StateID"><i class="far fa-trash-alt"></i></a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-<p>
-    <a href="/Index">Return to Home</a>
-</p>
+<div class="row">
+    <div class="col">
+        <div class="card shadow mb-3">
+            <div class="card-header py-3">
+                <h1 class="text-primary m-0 fw-bold">States</h1>
+            </div>
+            <div class="card-body">
+                <p>
+                    <a asp-page="Create">Create New</a>
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.State[0].StateName)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.State)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StateName)
+                                </td>
+                                <td>
+                                    <a asp-page="./Edit" asp-route-id="@item.StateID"><i class="far fa-edit"></i></a> |
+                                    <a asp-page="./Details" asp-route-id="@item.StateID"><i class="far fa-address-card"></i></a> |
+                                    <a asp-page="./Delete" asp-route-id="@item.StateID"><i class="far fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <p>
+                    <a href="/Index">Return to Home</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

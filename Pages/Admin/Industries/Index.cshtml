@@ -5,35 +5,46 @@
     ViewData["Title"] = "Industries";
 }
 
-<h1>Industries</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Industry[0].Description)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Industry) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.IndustryID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.IndustryID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.IndustryID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-<p>
-    <a href="/Index">Return to Home</a>
-</p>
+<div class="row">
+    <div class="col">
+        <div class="card shadow mb-3">
+            <div class="card-header py-3">
+                <h1 class="text-primary m-0 fw-bold">Industries</h1>
+            </div>
+            <div class="card-body">
+                <p>
+                    <a asp-page="Create">Create New</a>
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Industry[0].Description)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Industry)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    <a asp-page="./Edit" asp-route-id="@item.IndustryID">Edit</a> |
+                                    <a asp-page="./Details" asp-route-id="@item.IndustryID">Details</a> |
+                                    <a asp-page="./Delete" asp-route-id="@item.IndustryID">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <p>
+                    <a href="/Index">Return to Home</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
