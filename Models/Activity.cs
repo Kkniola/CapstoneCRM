@@ -23,7 +23,7 @@ namespace CapstoneSalesCRM.Models
         [Display(Name = "Date Created")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [DataType(DataType.Date)]
-        [MyDate(ErrorMessage = "Invalid date")]
+        //[MyDate(ErrorMessage = "Invalid date")]
         public DateTime DateCreated { get; set; }
         [Display(Name = "Created By")]
         public string CreatedBy { get; set; }
@@ -39,7 +39,7 @@ namespace CapstoneSalesCRM.Models
         [Display(Name = "Date Completed")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [DataType(DataType.Date)]
-        [MyDate(ErrorMessage = "Invalid date")]
+        //[MyDate(ErrorMessage = "Invalid date")]
         public DateTime? DateCompleted { get; set; }
 
 

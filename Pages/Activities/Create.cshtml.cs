@@ -20,10 +20,11 @@ namespace CapstoneSalesCRM.Pages.Activities
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int? id)
         {
         ViewData["ActivityTaskID"] = new SelectList(_context.ActivityTask, "ActivityTaskID", "TaskDescription");
-        ViewData["ContactID"] = new SelectList(_context.Contact, "ContactID", "LastName");
+            //ViewData["ContactID"] = new SelectList(_context.Contact, "ContactID", "LastName");
+        ViewData["ContactID"] = id;
             return Page();
         }
 
