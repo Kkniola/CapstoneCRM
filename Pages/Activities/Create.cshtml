@@ -25,8 +25,8 @@
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Activity.ActivityTaskID" class="control-label">Task Description</label>
-                <select asp-for="Activity.ActivityTaskID" class="form-control" asp-items="ViewBag.ActivityTaskID"></select>
+                <label asp-for="Activity.ActivityTask.TaskDescription" class="control-label">Task Description</label>
+                <select asp-for="Activity.ActivityTask.TaskDescription" class="form-control" asp-items="ViewBag.TaskDescription"></select>
             </div>
             @*<div class="form-group">
                 <label asp-for="Activity.ContactID" class="control-label">Contact Last Name</label>
@@ -57,18 +57,14 @@
                 <label asp-for="Activity.Status" class="control-label"></label>
                 <select asp-for="Activity.Status" class="form-control" asp-items="Html.GetEnumSelectList<CapstoneSalesCRM.Models.ActivityStatus>()"></select>
             </div>
-@*@if (Model.Activity.Status == Models.ActivityStatus.Complete) 
-    {  
-            <div class="form-group">
-                <input type="hidden" asp-for="Activity.DateCompleted" value="@todaysDate" />
-            </div>
-    }*@
+      
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
 
         </form>
-
+        
+     
 
 
 

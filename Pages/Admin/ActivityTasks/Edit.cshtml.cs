@@ -48,6 +48,8 @@ namespace CapstoneSalesCRM.Pages.ActivityTasks
                 return Page();
             }
 
+
+
             _context.Attach(ActivityTask).State = EntityState.Modified;
 
             try
