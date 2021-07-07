@@ -22,7 +22,7 @@ namespace CapstoneSalesCRM.Pages.Activities
 
         public IActionResult OnGet(int? id)
         {
-        ViewData["ActivityTaskID"] = new SelectList(_context.ActivityTask, "ActivityTaskID", "TaskDescription");
+        ViewData["TaskDescription"] = new SelectList(_context.ActivityTask, "TaskDescription", "TaskDescription");
             //ViewData["ContactID"] = new SelectList(_context.Contact, "ContactID", "LastName");
         ViewData["ContactID"] = id;
             return Page();
@@ -39,7 +39,14 @@ namespace CapstoneSalesCRM.Pages.Activities
         {
             if (!ModelState.IsValid)
             {
+                ViewData["TaskDescription"] = new SelectList(_context.ActivityTask, "TaskDescription", "TaskDescription");
+                ViewData["ContactID"] = Activity.ContactID;
                 return Page();
+            }
+
+            if (Activity.Status == ActivityStatus.Complete)
+            {
+                Activity.DateCompleted = DateTime.Today;
             }
 
             _context.Activity.Add(Activity);
