@@ -13,9 +13,19 @@
 
 
     <div class="container-fluid">
-        <div class="d-sm-flex justify-content-between align-items-center mb-4">
-            <h3 class="text-primary m-0 fw-bold">Welcome Back, @User.Identity.Name!</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="/Contacts/Create"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Create New Contact</a>
+        <div class="row">
+            <div class="col">
+                <h3 class="text-primary m-0 fw-bold" style="line-height:unset; padding-top:.6em">Welcome Back, @User.Identity.Name!</h3>
+            </div>
+
+            <div class="col" align="right" >
+                <a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="/Contacts/Create"><i class="fas fa-plus"></i>&nbsp;Create Contact</a>
+        
+                <a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="/Activities/Create"><i class="fas fa-plus"></i>&nbsp;Create Activity</a>
+            </div>
+            <p></p>
         </div>
+
         <div class="row">
             <div class="col-md-6 col-xl-3 mb-4">
                 <div class="card shadow border-start-primary py-2">
@@ -79,8 +89,8 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-7 col-xl-auto">
+        <div class="row" style="justify-content:stretch">
+            <div class="col-lg-auto col-xl-auto">
                 <div class="card shadow mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h6 class="text-primary fw-bold m-0">Upcoming Activities</h6>
@@ -88,9 +98,22 @@
                     <div class="card-body">
                         <div class="chart-area">
                             <table>
+                                @{
+                                    int k = 0;
+                                }
                                 @foreach (var ALitem in Model.ActivityList)
                                 {
-                                    <tr>
+                                    k = k + 1;
+                                    string rowColor;
+                                    if (k % 2 == 0)
+                                    {
+                                        rowColor = "generalAltRow";
+                                    }
+                                    else
+                                    {
+                                        rowColor = "generalRow";
+                                    }
+                                    <tr class="@rowColor">
                                         <th>
                                             @Html.DisplayFor(m => ALitem.Contact.FirstName)&nbsp;
                                         </th>
@@ -113,7 +136,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-7 col-xl-auto">
+            <div class="col-lg-auto col-xl-auto">
                 <div class="card shadow mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h6 class="text-primary fw-bold m-0">Recently Added Contacts</h6>
@@ -122,9 +145,22 @@
                         <div class="chart-area">
 
                             <table>
+                                @{
+                                    int i = 0;
+                                }
                                 @foreach (var CUitem in Model.ContactUserList)
                                 {
-                                    <tr>
+                                    i = i + 1;
+                                    string rowColor;
+                                    if (i % 2 == 0)
+                                    {
+                                        rowColor = "generalAltRow";
+                                    }
+                                    else
+                                    {
+                                        rowColor = "generalRow";
+                                    }
+                                    <tr class="@rowColor">
                                         <th>
                                             @Html.DisplayFor(m => CUitem.FirstName)&nbsp;
                                         </th>
@@ -132,7 +168,7 @@
                                             @Html.DisplayFor(m => CUitem.LastName)&nbsp;
                                         </th>
                                         <th>
-                                            @Html.DisplayFor(m => CUitem.Location.CompanyID)&nbsp;
+                                            @Html.DisplayFor(m => CUitem.Location.Company.CompanyName)&nbsp;
                                         </th>
                                         <th>
                                             @Html.DisplayFor(m => CUitem.Location.LocationName)&nbsp;
@@ -147,6 +183,51 @@
                     </div>
 
                 </div>
+            </div>
+
+            <div class="col-lg-auto col-xl-auto">
+                <div class="card shadow mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h6 class="text-primary fw-bold m-0">Todo List</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-area">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">10:30 AM</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1"></label></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">11:30 AM</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2"></label></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">12:30 AM</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3"></label></div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
             </div>
         </div>
 
@@ -180,50 +261,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-7 col-xl-5">
-                <div class="card shadow mb-4">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h6 class="text-primary fw-bold m-0">Todo List</h6>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <div class="row align-items-center no-gutters">
-                                    <div class="col me-2">
-                                        <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">10:30 AM</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1"></label></div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="row align-items-center no-gutters">
-                                    <div class="col me-2">
-                                        <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">11:30 AM</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2"></label></div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="row align-items-center no-gutters">
-                                    <div class="col me-2">
-                                        <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">12:30 AM</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3"></label></div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
 
-
-
-                    </div>
-                </div>
-            </div>
 
         </div>
         <div class="col">

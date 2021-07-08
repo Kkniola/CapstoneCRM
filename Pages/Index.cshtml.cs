@@ -32,20 +32,30 @@ namespace CapstoneSalesCRM.Pages
         [BindProperty]
         public List<Contact> ContactUserList { get; set; }
         public List<Activity> ActivityList { get; set; }
+        public IList<Location> Locations { get; set; }
         public async Task<IActionResult> OnGetAsync()
         {
             ContactUserList = await _db.Contact
                 .Include(c => c.Location)
                 .OrderByDescending(c => c.DateCreated)
                 .Take(10).ToListAsync();
-            
+
+            Locations = await _db.Location
+              .Include(c => c.Company)
+              .ToListAsync();
+
+
             ActivityList = await _db.Activity
                 .Include(c => c.ActivityTask)
                 .Where( c => c.Status == ActivityStatus.Incomplete)
                 .Where(c => c.DateScheduled >= DateTime.Now)
                 .OrderBy(c => c.DateScheduled)
                 .Take(10).ToListAsync();
-                
+
+            foreach (Contact contact in ContactUserList)
+            {
+                contact.Company = Locations.FirstOrDefault(l => l.LocationID == contact.LocationID).Company;
+            }
             return Page();
         }
     }
