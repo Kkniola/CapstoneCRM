@@ -20,36 +20,38 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-5">
-                        <div class="text-md-end dataTables_filter" id="dataTable_filter">
-                            <div class="input-group">
+                    <div class="col-auto" align="left">
+                        <a class="btn btn-primary" asp-page="Create"><i class="fas fa-plus"></i>&nbsp;Create New</a>
+                    </div>
+                    <div class="col" align="left">
+                        @*<div class="text-md-end dataTables_filter" id="dataTable_filter">*@
+                            <div class="input-group" style="padding-top:.5em">
                                 <form asp-page="./Index" method="get">
 
-                                    <input class="bg-light border-0" type="text" name="SearchString" value="@Model.CurrentFilter" placeholder="Search first or last name" />
+                                    <input class="bg-light border-0" style="line-height: 2.5em; display: inline-flex; vertical-align: middle; margin-bottom: 1em" type="text" name="SearchString" value="@Model.CurrentFilter" placeholder="Search first or last name" />
 
-                                    <input type="submit" value="&#xf002" class="btn btn-primary" /><a asp-page="./Index" class="btn btn-primary"><i class="fas fa-undo"></i></a>
+                                    <input type="submit" value="&#xf002" class="btn btn-primary" style="display:inline-flex; vertical-align:middle; margin-bottom:2em"/>&nbsp;<a style="margin-bottom:2em" asp-page="./Index" class="btn btn-primary"><i class="fas fa-undo"></i></a>
 
-                                </form></div>
+                                </form>
                             </div>
+                        @*</div>*@
                     </div>
-                    <div class="col-md-3">
-                        <a class="btn btn-primary" asp-page="Create">Create New</a>
-                    </div>
-                        
-                        <div class="col-md-3">
-                            <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
-                                <label class="form-label">
-                                    Show&nbsp;<select class="d-inline-block form-select form-select-sm">
-                                        <option value="10" selected="">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
-                                    </select>&nbsp;
-                                </label>
-                            </div>
+
+
+                    <div class="col" align="right" style=" float:right">
+                        <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
+                            <label class="form-label">
+                                Show&nbsp;<select class="d-inline-block form-select form-select-sm">
+                                    <option value="10" selected="">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>&nbsp;
+                            </label>
                         </div>
-                        
                     </div>
+
+                </div>
 
 
 

@@ -5,6 +5,11 @@
     ViewData["Title"] = "Industries";
 }
 
+<head>
+    <link rel="stylesheet" href="/css/custom.css" />
+    <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+</head>
+
 
 <div class="row">
     <div class="col">
@@ -33,9 +38,9 @@
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </td>
                                 <td>
-                                    <a asp-page="./Edit" asp-route-id="@item.IndustryID">Edit</a> |
-                                    <a asp-page="./Details" asp-route-id="@item.IndustryID">Details</a> |
-                                    <a asp-page="./Delete" asp-route-id="@item.IndustryID">Delete</a>
+                                    <a asp-page="./Edit" asp-route-id="@item.IndustryID"><i class="far fa-edit"></i></a> |
+                                    <a asp-page="./Details" asp-route-id="@item.IndustryID"><i class="far fa-address-card"></i></a> |
+                                    <a asp-page="./Delete" asp-route-id="@item.IndustryID"><i class="far fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                         }

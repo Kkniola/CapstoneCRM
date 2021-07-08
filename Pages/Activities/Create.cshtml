@@ -21,7 +21,19 @@
 
             <input type="hidden" asp-for="Activity.DateCreated" value="@todaysDate" />
             <input type="hidden" asp-for="Activity.CreatedBy" value="@User.Identity.Name" />
-            <input type="hidden" asp-for="Activity.ContactID" value="@ViewBag.ContactID" />
+
+            @if (ViewBag.ContactID == null)
+            {
+                <div class="form-group">
+                <label asp-for="Activity.ContactID" class="control-label">Contact Last Name</label>
+                <select asp-for="Activity.ContactID" class="form-control" asp-items="ViewBag.ContactIDSL"></select>
+                </div>
+            }
+
+            else 
+                { 
+                <input type="hidden" asp-for="Activity.ContactID" value="@ViewBag.ContactID" />
+                }
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -29,9 +41,9 @@
                 <select asp-for="Activity.ActivityTask.TaskDescription" class="form-control" asp-items="ViewBag.TaskDescription"></select>
             </div>
             @*<div class="form-group">
-                <label asp-for="Activity.ContactID" class="control-label">Contact Last Name</label>
-                <select asp-for="Activity.ContactID" class="form-control" asp-items="ViewBag.ContactID"></select>
-            </div>*@
+            <label asp-for="Activity.ContactID" class="control-label">Contact Last Name</label>
+            <select asp-for="Activity.ContactID" class="form-control" asp-items="ViewBag.ContactID"></select>
+        </div>*@
 
             <div class="form-group">
                 <label asp-for="Activity.DateScheduled" class="control-label"></label>
@@ -57,7 +69,7 @@
                 <label asp-for="Activity.Status" class="control-label"></label>
                 <select asp-for="Activity.Status" class="form-control" asp-items="Html.GetEnumSelectList<CapstoneSalesCRM.Models.ActivityStatus>()"></select>
             </div>
-      
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CapstoneSalesCRM.Pages
 {
-    public class IndustryChartModel : PageModel
+    public class Index1Model : PageModel
     {
         public void OnGet()
         {

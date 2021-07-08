@@ -12885,6 +12885,13 @@ body.sidebar-toggled footer.sticky-footer {
     width: 100%
 }
 
+.generalAltRow {
+    background-color: #EFF8FF;
+}
+
+.generalRow {
+    background-color: white;
+}
 
 
 

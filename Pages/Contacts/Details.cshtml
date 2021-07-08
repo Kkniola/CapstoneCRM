@@ -27,142 +27,194 @@
                     <p class="text-primary m-0 fw-bold">Contact Information</p>
                 </div>
                 <div class="card-body">
-                    <div>
-                        <dl class="row">
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.FirstName)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.FirstName)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.LastName)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.LastName)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.Suffix)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.Suffix)
-                            </dd>
-                            <dt class="col-sm-2">
+                    <div class="row" align="left">
+                        <dl class="col">
+                            <dt>
                                 @Html.DisplayNameFor(model => model.Contact.Prefix)
                             </dt>
-                            <dd class="col-sm-10">
+                            <dd>
                                 @Html.DisplayFor(model => model.Contact.Prefix)
                             </dd>
-                            <dt class="col-sm-2">
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.FirstName)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.FirstName)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.LastName)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.LastName)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.Suffix)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.Suffix)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
                                 @Html.DisplayNameFor(model => model.Contact.Pronouns)
                             </dt>
-                            <dd class="col-sm-10">
+                            <dd>
                                 @Html.DisplayFor(model => model.Contact.Pronouns)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.Title)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.Title)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.DOB)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.DOB)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.Email)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.Email)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.HomeAddress1)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.HomeAddress1)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.HomeAddress2)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.HomeAddress2)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.HomeCity)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.HomeCity)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.HomeZipCode)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.HomeZipCode)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.Country)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.Country)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.HomePhone)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.HomePhone)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.CellPhone)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.CellPhone)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.WorkPhone)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.WorkPhone)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.ContactMethod)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.ContactMethod)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.Source)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.Source.SourceDescription)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.CreatedBy)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.CreatedBy)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.DateCreated)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.DateCreated)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.LastDateContacted)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.LastDateContacted)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.Comment)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.Comment)
                             </dd>
                         </dl>
                     </div>
+                    <div class="row" align="left">
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.DOB)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.DOB)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.Source)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.Source.SourceDescription)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.CreatedBy)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.CreatedBy)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.DateCreated)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.DateCreated)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.LastDateContacted)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.LastDateContacted)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="row" align="left">
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.ContactMethod)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.ContactMethod)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.Email)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.Email)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.CellPhone)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.CellPhone)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.WorkPhone)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.WorkPhone)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.HomePhone)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.HomePhone)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="row" align="left">
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.HomeAddress1)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.HomeAddress1)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.HomeAddress2)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.HomeAddress2)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.HomeCity)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.HomeCity)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.HomeZipCode)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.HomeZipCode)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.State)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.State.StateID)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="row" align="left" style="float:left">
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.Country)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.Country)
+                            </dd>
+                        </dl>
+                        <dl class="col">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contact.Comment)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contact.Comment)
+                            </dd>
+                        </dl>
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -193,18 +245,20 @@
                         </div>
                         <div class="col">
                             <dl>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.State)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.State.StateID)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Contact.Role)
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Contact.Role.RoleDescription)
-                            </dd>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Contact.Title)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.Contact.Title)
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="col-sm-2">
+                                    @Html.DisplayNameFor(model => model.Contact.Role)
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @Html.DisplayFor(model => model.Contact.Role.RoleDescription)
+                                </dd>
                             </dl>
                         </div>
                     </div>
