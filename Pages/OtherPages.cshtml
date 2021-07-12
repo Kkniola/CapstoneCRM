@@ -3,15 +3,67 @@
 @{
 }
 
-<a class="text-dark" asp-area="" asp-page="/Activities/Index">Activities</a>
-<a class="text-dark" asp-area="" asp-page="/Admin/ActivityTasks/Index">Tasks</a>
-<a class="text-dark" asp-area="" asp-page="/Admin/Industries/Index">Industries</a>
-<a class="text-dark" asp-area="" asp-page="/Admin/Locations/Index">Locations</a>
-<a class="text-dark" asp-area="" asp-page="/Admin/Roles/Index">Roles</a>
-<a class="text-dark" asp-area="" asp-page="/Admin/Sources/Index">Sources</a>
-<a class="text-dark" asp-area="" asp-page="/Admin/States/Index">States</a>
-<p>
-    <a href="/Index">Return to Home</a>
-</p>
+<head>
+    <link rel="stylesheet" href="/css/custom.css" />
+    <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+    <style>
+        tr:nth-last-child(even) {
+            background-color: #EFF8FF;
+        }
+        hr {
+            clear: both;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        @*<h3 class="text-dark mb-4">Contacts</h3>*@
+        <div class="card shadow">
+            <div class="card-header py-3">
+                <h1 class="text-primary m-0 fw-bold">Administrative Tables</h1>
+            </div>
+            <div class="card-body">
+                <hr />
+                <div class="row">
+                    <div class="col">
+
+                        <i class="fas fa-chart-line fa-3x"></i><br />
+                        <a class="text-dark" asp-area="" asp-page="/Activities/Index">Activities</a>
+                    </div>
+                    <div class="col">
+                        <i class="fas fa-tasks fa-3x"></i><br />
+                        <a class="text-dark" asp-area="" asp-page="/Admin/ActivityTasks/Index">Tasks</a>
+                    </div>
+                    <div class="col">
+                        <i class="fas fa-industry fa-3x"></i><br />
+                        <a class="text-dark" asp-area="" asp-page="/Admin/Industries/Index">Industries</a>
+                    </div>
+                    <div class="col">
+                        <i class="far fa-compass fa-3x"></i><br />
+                        <a class="text-dark" asp-area="" asp-page="/Admin/Locations/Index">Locations</a>
+                    </div>
+
+                    <div class="col">
+                        <i class="fas fa-user-friends fa-3x"></i><br />
+                        <a class="text-dark" asp-area="" asp-page="/Admin/Roles/Index">Roles</a>
+                    </div>
+                    <div class="col">
+                        <i class="fas fa-tv fa-3x"></i><br />
+                        <a class="text-dark" asp-area="" asp-page="/Admin/Sources/Index">Sources</a>
+                    </div>
+                    <div class="col">
+                        <i class="fas fa-globe-americas fa-3x"></i><br />
+                        <a class="text-dark" asp-area="" asp-page="/Admin/States/Index">States</a>
+                    </div>
 
 
+                </div>
+                <p>
+                    <a href="/Index">Return to Home</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
