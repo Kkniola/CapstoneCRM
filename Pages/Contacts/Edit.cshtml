@@ -5,164 +5,195 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1 class="text-primary m-0 fw-bold">Edit</h1>
+<head>
+    <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+    <style>
+        tr:nth-last-child(even) {
+            background-color: #EFF8FF;
+        }
 
-<h4>Contact</h4>
-<hr />
-<div class="row">
-    <div class="col-md-auto">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Contact.ContactID" />
-            <div class="form-group">
-                <label asp-for="Contact.FirstName" class="control-label"></label>
-                <input asp-for="Contact.FirstName" class="form-control" />
-                <span asp-validation-for="Contact.FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.LastName" class="control-label"></label>
-                <input asp-for="Contact.LastName" class="form-control" />
-                <span asp-validation-for="Contact.LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.Suffix" class="control-label"></label>
-                <input asp-for="Contact.Suffix" class="form-control" />
-                <span asp-validation-for="Contact.Suffix" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.Prefix" class="control-label"></label>
-                <select asp-for="Contact.Prefix" class="form-control" asp-items="Html.GetEnumSelectList<CapstoneSalesCRM.Models.ContactPrefix>()"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.Pronouns" class="control-label"></label>
-                <select asp-for="Contact.Pronouns" class="form-control" asp-items="Html.GetEnumSelectList<CapstoneSalesCRM.Models.ContactPronoun>()"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.Title" class="control-label"></label>
-                <input asp-for="Contact.Title" class="form-control" />
-                <span asp-validation-for="Contact.Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.Role" class="control-label"></label>
-                <select asp-for="Contact.RoleID" class="form-control" asp-items="ViewBag.RoleID"></select>
-                <span asp-validation-for="Contact.RoleID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.DOB" class="control-label"></label>
-                <input asp-for="Contact.DOB" class="form-control" />
-                <span asp-validation-for="Contact.DOB" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.Email" class="control-label"></label>
-                <input asp-for="Contact.Email" class="form-control" />
-                <span asp-validation-for="Contact.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.HomeAddress1" class="control-label"></label>
-                <input asp-for="Contact.HomeAddress1" class="form-control" />
-                <span asp-validation-for="Contact.HomeAddress1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.HomeAddress2" class="control-label"></label>
-                <input asp-for="Contact.HomeAddress2" class="form-control" />
-                <span asp-validation-for="Contact.HomeAddress2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.HomeCity" class="control-label"></label>
-                <input asp-for="Contact.HomeCity" class="form-control" />
-                <span asp-validation-for="Contact.HomeCity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.StateID" class="control-label"></label>
-                <select asp-for="Contact.StateID" class="form-control" asp-items="ViewBag.StateID"></select>
-                <span asp-validation-for="Contact.StateID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.HomeZipCode" class="control-label"></label>
-                <input asp-for="Contact.HomeZipCode" class="form-control" />
-                <span asp-validation-for="Contact.HomeZipCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.Country" class="control-label"></label>
-                <input asp-for="Contact.Country" class="form-control" />
-                <span asp-validation-for="Contact.Country" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.HomePhone" class="control-label"></label>
-                <input asp-for="Contact.HomePhone" class="form-control" />
-                <span asp-validation-for="Contact.HomePhone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.CellPhone" class="control-label"></label>
-                <input asp-for="Contact.CellPhone" class="form-control" />
-                <span asp-validation-for="Contact.CellPhone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.WorkPhone" class="control-label"></label>
-                <input asp-for="Contact.WorkPhone" class="form-control" />
-                <span asp-validation-for="Contact.WorkPhone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.LinkedIn" class="control-label"></label>
-                <input asp-for="Contact.LinkedIn" class="form-control" />
-                <span asp-validation-for="Contact.LinkedIn" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.Facebook" class="control-label"></label>
-                <input asp-for="Contact.Facebook" class="form-control" />
-                <span asp-validation-for="Contact.Facebook" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.ContactMethod" class="control-label"></label>
-                <input asp-for="Contact.ContactMethod" class="form-control" />
-                <span asp-validation-for="Contact.ContactMethod" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.EmergencyContactName" class="control-label"></label>
-                <input asp-for="Contact.EmergencyContactName" class="form-control" />
-                <span asp-validation-for="Contact.EmergencyContactName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.EmergencyContactNumber" class="control-label"></label>
-                <input asp-for="Contact.EmergencyContactNumber" class="form-control" />
-                <span asp-validation-for="Contact.EmergencyContactNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.Company.CompanyName" class="control-label"></label>
-                <select asp-for="Contact.Company.CompanyName" class="form-control" asp-items="ViewBag.CompanyName"></select>
-                <span asp-validation-for="Contact.Company.CompanyName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.Location.LocationName" class="control-label"></label>
-                <select asp-for="Contact.LocationID" class="form-control" asp-items="ViewBag.LocationID"></select>
-                <span asp-validation-for="Contact.LocationID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.Source" class="control-label"></label>
-                <select asp-for="Contact.SourceID" class="form-control" asp-items="ViewBag.SourceID"></select>
-                <span asp-validation-for="Contact.SourceID" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Contact.LastDateContacted" class="control-label"></label>
-                <input asp-for="Contact.LastDateContacted" class="form-control" />
-                <span asp-validation-for="Contact.LastDateContacted" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contact.Comment" class="control-label"></label>
-                <input asp-for="Contact.Comment" class="form-control" />
-                <span asp-validation-for="Contact.Comment" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        hr {
+            clear: both;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="row" style="display: flex">
+        <div class="col-auto" style="float:left">
+            <h1 class="text-primary m-0 fw-bold">Edit Contact</h1>
+        </div>
     </div>
-</div>
+    <hr /><form method="post">
+    <div class="row">
+        <div class="col">
+            <div class="card shadow mb-3">
+                <div class="card-header py-3">
+                    <p class="text-primary m-0 fw-bold">Personal Information</p>
+                </div>
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Contact.ContactID" />
+                    <div class="form-group">
+                        <label asp-for="Contact.FirstName" class="control-label"></label>
+                        <input asp-for="Contact.FirstName" class="form-control" />
+                        <span asp-validation-for="Contact.FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.LastName" class="control-label"></label>
+                        <input asp-for="Contact.LastName" class="form-control" />
+                        <span asp-validation-for="Contact.LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Suffix" class="control-label"></label>
+                        <input asp-for="Contact.Suffix" class="form-control" />
+                        <span asp-validation-for="Contact.Suffix" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Prefix" class="control-label"></label>
+                        <select asp-for="Contact.Prefix" class="form-control" asp-items="Html.GetEnumSelectList<CapstoneSalesCRM.Models.ContactPrefix>()"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Pronouns" class="control-label"></label>
+                        <select asp-for="Contact.Pronouns" class="form-control" asp-items="Html.GetEnumSelectList<CapstoneSalesCRM.Models.ContactPronoun>()"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Title" class="control-label"></label>
+                        <input asp-for="Contact.Title" class="form-control" />
+                        <span asp-validation-for="Contact.Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Role" class="control-label"></label>
+                        <select asp-for="Contact.RoleID" class="form-control" asp-items="ViewBag.RoleID"></select>
+                        <span asp-validation-for="Contact.RoleID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.DOB" class="control-label"></label>
+                        <input asp-for="Contact.DOB" class="form-control" />
+                        <span asp-validation-for="Contact.DOB" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Email" class="control-label"></label>
+                        <input asp-for="Contact.Email" class="form-control" />
+                        <span asp-validation-for="Contact.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.HomeAddress1" class="control-label"></label>
+                        <input asp-for="Contact.HomeAddress1" class="form-control" />
+                        <span asp-validation-for="Contact.HomeAddress1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.HomeAddress2" class="control-label"></label>
+                        <input asp-for="Contact.HomeAddress2" class="form-control" />
+                        <span asp-validation-for="Contact.HomeAddress2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.HomeCity" class="control-label"></label>
+                        <input asp-for="Contact.HomeCity" class="form-control" />
+                        <span asp-validation-for="Contact.HomeCity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.StateID" class="control-label"></label>
+                        <select asp-for="Contact.StateID" class="form-control" asp-items="ViewBag.StateID"></select>
+                        <span asp-validation-for="Contact.StateID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.HomeZipCode" class="control-label"></label>
+                        <input asp-for="Contact.HomeZipCode" class="form-control" />
+                        <span asp-validation-for="Contact.HomeZipCode" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Country" class="control-label"></label>
+                        <input asp-for="Contact.Country" class="form-control" />
+                        <span asp-validation-for="Contact.Country" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.HomePhone" class="control-label"></label>
+                        <input asp-for="Contact.HomePhone" class="form-control" />
+                        <span asp-validation-for="Contact.HomePhone" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.CellPhone" class="control-label"></label>
+                        <input asp-for="Contact.CellPhone" class="form-control" />
+                        <span asp-validation-for="Contact.CellPhone" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.WorkPhone" class="control-label"></label>
+                        <input asp-for="Contact.WorkPhone" class="form-control" />
+                        <span asp-validation-for="Contact.WorkPhone" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.LinkedIn" class="control-label"></label>
+                        <input asp-for="Contact.LinkedIn" class="form-control" />
+                        <span asp-validation-for="Contact.LinkedIn" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Facebook" class="control-label"></label>
+                        <input asp-for="Contact.Facebook" class="form-control" />
+                        <span asp-validation-for="Contact.Facebook" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.ContactMethod" class="control-label"></label>
+                        <input asp-for="Contact.ContactMethod" class="form-control" />
+                        <span asp-validation-for="Contact.ContactMethod" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.EmergencyContactName" class="control-label"></label>
+                        <input asp-for="Contact.EmergencyContactName" class="form-control" />
+                        <span asp-validation-for="Contact.EmergencyContactName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.EmergencyContactNumber" class="control-label"></label>
+                        <input asp-for="Contact.EmergencyContactNumber" class="form-control" />
+                        <span asp-validation-for="Contact.EmergencyContactNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Company.CompanyName" class="control-label"></label>
+                        <select asp-for="Contact.Company.CompanyName" class="form-control" asp-items="ViewBag.CompanyName"></select>
+                        <span asp-validation-for="Contact.Company.CompanyName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Location.LocationName" class="control-label"></label>
+                        <select asp-for="Contact.LocationID" class="form-control" asp-items="ViewBag.LocationID"></select>
+                        <span asp-validation-for="Contact.LocationID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Source" class="control-label"></label>
+                        <select asp-for="Contact.SourceID" class="form-control" asp-items="ViewBag.SourceID"></select>
+                        <span asp-validation-for="Contact.SourceID" class="text-danger"></span>
+                    </div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
+                    <div class="form-group">
+                        <label asp-for="Contact.LastDateContacted" class="control-label"></label>
+                        <input asp-for="Contact.LastDateContacted" class="form-control" />
+                        <span asp-validation-for="Contact.LastDateContacted" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Comment" class="control-label"></label>
+                        <input asp-for="Contact.Comment" class="form-control" />
+                        <span asp-validation-for="Contact.Comment" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                    <div class="row">
+                        <div>
+                            <input type="submit" value="&#xf067 Create" class="btn btn-primary" />
+                            <a class="btn btn-primary" asp-page="Index"><i class="fas fa-undo"></i>&nbsp;Back to List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+</body>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

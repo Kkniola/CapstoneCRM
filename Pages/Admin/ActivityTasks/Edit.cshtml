@@ -5,30 +5,57 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1 class="text-primary m-0 fw-bold">Edit</h1>
 
-<h4>ActivityTask</h4>
-<hr />
-<div class="row">
-    <div class="col-md-auto">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ActivityTask.ActivityTaskID" />
-            <div class="form-group">
-                <label asp-for="ActivityTask.TaskDescription" class="control-label"></label>
-                <input asp-for="ActivityTask.TaskDescription" class="form-control" />
-                <span asp-validation-for="ActivityTask.TaskDescription" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<head>
+    <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+    <style>
+        tr:nth-last-child(even) {
+            background-color: #EFF8FF;
+        }
+
+        hr {
+            clear: both;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="row" style="display: flex">
+        <div class="col-auto" style="float:left">
+            <h1 class="text-primary m-0 fw-bold">Edit Task</h1>
+        </div>
     </div>
-</div>
+    <form method="post">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow mb-3">
+                    <div class="card-header py-3">
+                        <p class="text-primary m-0 fw-bold"></p>
+                    </div>
+                    <div class="card-body">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="ActivityTask.ActivityTaskID" />
+                        <div class="form-group">
+                            <label asp-for="ActivityTask.TaskDescription" class="control-label"></label>
+                            <input asp-for="ActivityTask.TaskDescription" class="form-control" />
+                            <span asp-validation-for="ActivityTask.TaskDescription" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                        <div class="row">
+                            <div>
+                                <input type="submit" value="&#xf067 Create" class="btn btn-primary" />
+                                <a class="btn btn-primary" asp-page="Index"><i class="fas fa-undo"></i>&nbsp;Back to List</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
+</body>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
