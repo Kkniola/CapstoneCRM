@@ -6,20 +6,32 @@
 }
 <head>
     <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+    <style>
+        tr:nth-last-child(even) {
+            background-color: #EFF8FF;
+        }
+        hr {
+            clear: both;
+            visibility: hidden;
+        }
+    </style>
 </head>
 
 @*<h1>Details</h1>*@
 <body>
-    <h1 class="text-primary m-0 fw-bold">
-        @Html.DisplayFor(model => model.Contact.FirstName)
-        @Html.DisplayFor(model => model.Contact.LastName)
-    </h1>
-
-    <div>
-        <a asp-page="./Edit" asp-route-id="@Model.Contact.ContactID" class="btn btn-primary btn-sm"> Edit <i class="far fa-edit"></i></a>
-        <a asp-page="./Index" class="btn btn-primary btn-sm">Back to List</a>
+    <div class="row" style="display: flex">
+        <div class="col-auto" style="float:left" >
+            <h1 class="text-primary m-0 fw-bold">
+                @Html.DisplayFor(model => model.Contact.FirstName)
+                @Html.DisplayFor(model => model.Contact.LastName)
+            </h1>
+        </div>
+        <div class="col"  align="right">
+            <a asp-page="./Edit" asp-route-id="@Model.Contact.ContactID" class="btn btn-primary btn-sm"> Edit <i class="far fa-edit"></i></a>
+            <a asp-page="./Index" class="btn btn-primary btn-sm">Back to List</a>
+        </div>
     </div>
-
+    <hr />
     <div class="row">
         <div class="col">
             <div class="card shadow mb-3">
@@ -342,37 +354,37 @@
                 </div>
                 <div class="card-body">
 
-                    <table>
-
-                        <thead>
-
-                            <tr>
-                                <th>DateScheduled</th>
-                                <th>Date Created</th>
-                                <th>Task Description</th>
-                                <th>Status</th>
-                                <th>Notes</th>
-                                <th>Date Completed</th>
-                            </tr>
-
-                        </thead>
-                        <tbody>
-                            @foreach (var aitem in Model.Activity)
-                            {
-
+                    <table width="100%">
+                            <thead>
 
                                 <tr>
-                                    <th>@Html.DisplayFor(modelItem => aitem.DateScheduled)</th>
-                                    <th>@Html.DisplayFor(modelItem => aitem.DateCreated)</th>
-                                    <th>@Html.DisplayFor(modelItem => aitem.ActivityTask.TaskDescription)</th>
-                                    <th>@Html.DisplayFor(modelItem => aitem.Status)</th>
-                                    <th>@Html.DisplayFor(modelItem => aitem.Notes)</th>
-                                    <th>@Html.DisplayFor(modelItem => aitem.DateCompleted)</th>
+                                    <th>DateScheduled</th>
+                                    <th>Date Created</th>
+                                    <th>Task Description</th>
+                                    <th>Status</th>
+                                    <th>Notes</th>
+                                    <th>Date Completed</th>
                                 </tr>
 
-                            }
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                    @foreach (var aitem in Model.Activity)
+                                    {
+
+                                        <tr>
+                                            <td>@Html.DisplayFor(modelItem => aitem.DateScheduled)</td>
+                                            <td>@Html.DisplayFor(modelItem => aitem.DateCreated)</td>
+                                            <td>@Html.DisplayFor(modelItem => aitem.ActivityTask.TaskDescription)</td>
+                                            <td>@Html.DisplayFor(modelItem => aitem.Status)</td>
+                                            <td>@Html.DisplayFor(modelItem => aitem.Notes)</td>
+                                            <td>@Html.DisplayFor(modelItem => aitem.DateCompleted)</td>
+                                        </tr>
+
+                                    }
+                           
+                            </tbody>
+                        
+                        </table>
 
                     <a asp-page="/Activities/Create" asp-route-id="@Model.Contact.ContactID" class="btn btn-primary btn-sm">Create New Activity</a>
                 </div>

@@ -4,71 +4,113 @@
 @{
     ViewData["Title"] = "Details";
 }
+<head>
+    <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+    <style>
+        tr:nth-last-child(even) {
+            background-color: #EFF8FF;
+        }
 
+        hr {
+            clear: both;
+            visibility: hidden;
+        }
+    </style>
+</head>
 @*<h1>Details</h1>*@
-
-<div>
-    <h1 class="text-primary m-0 fw-bold">@Html.DisplayFor(model => model.Company.CompanyName)</h1>
+<body>
+    <div class="row" style="display: flex">
+        <div class="col-auto" style="float:left">
+            <h1 class="text-primary m-0 fw-bold">@Html.DisplayFor(model => model.Company.CompanyName)</h1>
+        </div>
+        <div class="col" align="right">
+            <a asp-page="./Edit" asp-route-id="@Model.Company.CompanyID" class="btn btn-primary btn-sm"> Edit <i class="far fa-edit"></i></a>
+            <a asp-page="./Index" class="btn btn-primary btn-sm">Back to List</a>
+        </div>
+    </div>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Company.CompanyName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Company.CompanyName)
-        </dd>
+    <div class="row">
+        <div class="col">
+            <div class="card shadow mb-3">
+                <div class="card-header py-3">
+                    <p class="text-primary m-0 fw-bold">Company Information</p>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Company.CompanyName)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Company.CompanyName)
+                        </dd>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Company.Website)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Company.Website)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Company.LinkedIn)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Company.LinkedIn)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Company.Facebook)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Company.Facebook)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Company.Industry)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Company.Industry.Description)
-        </dd>
-    </dl>
-</div>
-<div>
-    <h4>Company Locations</h4>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Company.Website)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Company.Website)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Company.LinkedIn)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Company.LinkedIn)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Company.Facebook)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Company.Facebook)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Company.Industry)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Company.Industry.Description)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
 
-    <table >
-        <thead>
-            <tr>      
-                <th>Location Name</th>
-                <th>Location City</th>
-                <th>State ID</th>
-            </tr>
-            
-        </thead>
-        <tbody>
-            @foreach (var litem in Model.Location)
-            {
-                <tr>
-                    <th>@Html.DisplayFor(modelItem => litem.LocationName)</th>
-                    <th>@Html.DisplayFor(modelItem => litem.LocationCity)</th>
-                    <th>@Html.DisplayFor(modelItem => litem.StateID)</th>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Company.CompanyID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card shadow mb-3">
+                <div class="card-header py-3">
+                    <p class="text-primary m-0 fw-bold">Company Locations</p>
+                </div>
+                <div class="card-body">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Location Name</th>
+                                <th>Location City</th>
+                                <th>State ID</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            @foreach (var litem in Model.Location)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => litem.LocationName)</td>
+                                    <td>@Html.DisplayFor(modelItem => litem.LocationCity)</td>
+                                    <td>@Html.DisplayFor(modelItem => litem.StateID)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <a asp-page="/Admin/Locations/Create" asp-route-id="@Model.Company.CompanyID" class="btn btn-primary btn-sm">Create New Location</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+
+</body>
