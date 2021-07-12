@@ -7,6 +7,11 @@
 <head>
     <link rel="stylesheet" href="/css/custom.css" />
     <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+    <style>
+        tr:nth-last-child(even) {
+            background-color: #EFF8FF;
+        }
+    </style>
 </head>
 
 
@@ -17,64 +22,80 @@
                 <h1 class="text-primary m-0 fw-bold">Companies</h1>
             </div>
             <div class="card-body">
-                <p>
-                    <a asp-page="Create">Create New</a>
-                </p>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Company[0].CompanyName)
-                            </th>
+                <div class="row">
+                    <div class="col-auto" align="left">
+                        <a class="btn btn-primary" asp-page="Create"><i class="fas fa-plus"></i>&nbsp;Create New</a>
+                    </div>
+                
+                    <div class="col" align="left">
+                        @*<div class="text-md-end dataTables_filter" id="dataTable_filter">*@
+                        <div class="input-group" style="padding-top:.5em">
+                            <form asp-page="./Index" method="get">
 
-                            <th>
-                                @Html.DisplayNameFor(model => model.Company[0].Website)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Company[0].LinkedIn)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Company[0].Facebook)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Company[0].Industry)
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model.Company)
-                        {
+                                <input class="bg-light border-0" style="line-height: 2.5em; display: inline-flex; vertical-align: middle; margin-bottom: 1em" type="text" name="SearchString" value="@Model.CurrentFilter" placeholder="Search company name" />
+
+                                <input type="submit" value="&#xf002" class="btn btn-primary" style="display:inline-flex; vertical-align:middle; margin-bottom:2em" />&nbsp;<a style="margin-bottom:2em" asp-page="./Index" class="btn btn-primary"><i class="fas fa-undo"></i></a>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.CompanyName)
-                                </td>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Company[0].CompanyName)
+                                </th>
 
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Website)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.LinkedIn)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Facebook)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Industry.Description)
-                                </td>
-                                <td>
-                                    <a asp-page="./Edit" asp-route-id="@item.CompanyID"><i class="far fa-edit"></i></a> |
-                                    <a asp-page="./Details" asp-route-id="@item.CompanyID"><i class="far fa-address-card"></i></a> |
-                                    <a asp-page="./Delete" asp-route-id="@item.CompanyID"><i class="far fa-trash-alt"></i></a>
-                                </td>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Company[0].Website)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Company[0].LinkedIn)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Company[0].Facebook)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Company[0].Industry)
+                                </th>
+                                <th></th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
-                <p>
-                    <a href="/Index">Return to Home</a>
-                </p>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Company)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CompanyName)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Website)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LinkedIn)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Facebook)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Industry.Description)
+                                    </td>
+                                    <td>
+                                        <a asp-page="./Edit" asp-route-id="@item.CompanyID"><i class="far fa-edit"></i></a> |
+                                        <a asp-page="./Details" asp-route-id="@item.CompanyID"><i class="far fa-address-card"></i></a> |
+                                        <a asp-page="./Delete" asp-route-id="@item.CompanyID"><i class="far fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <p>
+                        <a href="/Index">Return to Home</a>
+                    </p>
+                </div>
             </div>
-        </div>
     </div>
 </div>

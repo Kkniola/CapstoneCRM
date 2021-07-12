@@ -8,7 +8,7 @@ namespace CapstoneSalesCRM.Models
 {
     public class Industry
     {
-        [Display(Name = "Industry ID")] 
+        [Display(Name = "Industry")] 
         public int IndustryID { get; set; }
         [Display(Name = "Industry Description")] 
         public string Description { get; set; }

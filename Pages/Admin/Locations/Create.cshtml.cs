@@ -19,10 +19,18 @@ namespace CapstoneSalesCRM.Pages.Locations
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int? id)
         {
-        ViewData["CompanyID"] = new SelectList(_context.Company, "CompanyID", "CompanyName");
-        ViewData["StateID"] = new SelectList(_context.Set<State>(), "StateID", "StateName");
+            if (id == null)
+            {
+                ViewData["CompanyIDSL"] = new SelectList(_context.Company, "CompanyID", "CompanyName");
+            }
+
+            else {
+                ViewData["CompanyID"] = id;
+            }
+        
+            ViewData["StateID"] = new SelectList(_context.Set<State>(), "StateID", "StateName");
             return Page();
         }
 
@@ -35,6 +43,8 @@ namespace CapstoneSalesCRM.Pages.Locations
         {
             if (!ModelState.IsValid)
             {
+                ViewData["StateID"] = new SelectList(_context.Set<State>(), "StateID", "StateName");
+                ViewData["CompanyID"] = Location.CompanyID;
                 return Page();
             }
 
