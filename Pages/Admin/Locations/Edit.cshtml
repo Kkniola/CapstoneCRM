@@ -34,60 +34,60 @@
                     <div class="card-body">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <input type="hidden" asp-for="Location.LocationID" />
-                        <div class="form-group">
-                            <label asp-for="Location.Company.CompanyName" class="control-label"></label>
-                            <select asp-for="Location.Company.CompanyName" class="form-control" asp-items="ViewBag.CompanyName"></select>
-                            <span asp-validation-for="Location.Company.CompanyName" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Location.LocationName" class="control-label"></label>
-                            <input asp-for="Location.LocationName" class="form-control" />
-                            <span asp-validation-for="Location.LocationName" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Location.LocationAddress1" class="control-label"></label>
-                            <input asp-for="Location.LocationAddress1" class="form-control" />
-                            <span asp-validation-for="Location.LocationAddress1" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Location.LocationAddress2" class="control-label"></label>
-                            <input asp-for="Location.LocationAddress2" class="form-control" />
-                            <span asp-validation-for="Location.LocationAddress2" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Location.LocationCity" class="control-label"></label>
-                            <input asp-for="Location.LocationCity" class="form-control" />
-                            <span asp-validation-for="Location.LocationCity" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Location.StateID" class="control-label"></label>
-                            <select asp-for="Location.StateID" class="form-control" asp-items="ViewBag.StateID"></select>
-                            <span asp-validation-for="Location.StateID" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Location.Country" class="control-label"></label>
-                            <input asp-for="Location.Country" class="form-control" />
-                            <span asp-validation-for="Location.Country" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Location.MainPhone" class="control-label"></label>
-                            <input asp-for="Location.MainPhone" class="form-control" />
-                            <span asp-validation-for="Location.MainPhone" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Save" class="btn btn-primary" />
+                        <div class="row">
+                            <div class="col">
+                                <label asp-for="Location.Company.CompanyName" class="control-label"></label>
+                                <select asp-for="Location.Company.CompanyName" class="form-control" asp-items="ViewBag.CompanyName"></select>
+                                <span asp-validation-for="Location.Company.CompanyName" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="Location.LocationName" class="control-label"></label>
+                                <input asp-for="Location.LocationName" class="form-control" />
+                                <span asp-validation-for="Location.LocationName" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="Location.LocationAddress1" class="control-label"></label>
+                                <input asp-for="Location.LocationAddress1" class="form-control" />
+                                <span asp-validation-for="Location.LocationAddress1" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="Location.LocationAddress2" class="control-label"></label>
+                                <input asp-for="Location.LocationAddress2" class="form-control" />
+                                <span asp-validation-for="Location.LocationAddress2" class="text-danger"></span>
+                            </div>
                         </div>
                         <div class="row">
-                            <div>
-                                <input type="submit" value="&#xf067 Create" class="btn btn-primary" />
-                                <a class="btn btn-primary" asp-page="Index"><i class="fas fa-undo"></i>&nbsp;Back to List</a>
+                            <div class="col">
+                                <label asp-for="Location.LocationCity" class="control-label"></label>
+                                <input asp-for="Location.LocationCity" class="form-control" />
+                                <span asp-validation-for="Location.LocationCity" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="Location.StateID" class="control-label"></label>
+                                <select asp-for="Location.StateID" class="form-control" asp-items="ViewBag.StateID"></select>
+                                <span asp-validation-for="Location.StateID" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="Location.Country" class="control-label"></label>
+                                <input asp-for="Location.Country" class="form-control" />
+                                <span asp-validation-for="Location.Country" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="Location.MainPhone" class="control-label"></label>
+                                <input asp-for="Location.MainPhone" class="form-control" />
+                                <span asp-validation-for="Location.MainPhone" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <div class="row">
+            <div>
+                <input type="submit" value="&#xf0c7 Save" class="btn btn-primary" />
+                <a class="btn btn-primary" asp-page="Index"><i class="fas fa-undo"></i>&nbsp;Back to List</a>
+            </div>
+        </div>
     </form>
 
 </body>
