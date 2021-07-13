@@ -5,74 +5,99 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1 class="text-primary m-0 fw-bold">Edit</h1>
 
-<h4>Activity</h4>
-<hr />
-<div class="row">
-    <div class="col-md-auto">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Activity.ActivityID" />
-            <div class="form-group">
-                <label asp-for="Activity.ActivityTask.TaskDescription" class="control-label"></label>
-                <select asp-for="Activity.ActivityTaskID" class="form-control" asp-items="ViewBag.ActivityTaskID"></select>
-                <span asp-validation-for="Activity.ActivityTaskID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Activity.Contact.LastName" class="control-label"></label>
-                <select asp-for="Activity.ContactID" class="form-control" asp-items="ViewBag.ContactID"></select>
-                <span asp-validation-for="Activity.ContactID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Activity.DateScheduled" class="control-label"></label>
-                <input asp-for="Activity.DateScheduled" class="form-control" />
-                <span asp-validation-for="Activity.DateScheduled" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Activity.WhoToNotify" class="control-label"></label>
-                <input asp-for="Activity.WhoToNotify" class="form-control" />
-                <span asp-validation-for="Activity.WhoToNotify" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Activity.HowToNotify" class="control-label"></label>
-                <input asp-for="Activity.HowToNotify" class="form-control" />
-                <span asp-validation-for="Activity.HowToNotify" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Activity.Notes" class="control-label"></label>
-                <input asp-for="Activity.Notes" class="form-control" />
-                <span asp-validation-for="Activity.Notes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Activity.Status" class="control-label"></label>
-                <select asp-for="Activity.Status" class="form-control" asp-items="Html.GetEnumSelectList<CapstoneSalesCRM.Models.ActivityStatus>()"></select>
+<head>
+    <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+    <style>
+        tr:nth-last-child(even) {
+            background-color: #EFF8FF;
+        }
 
-                @if (Model.Activity.Status == Models.ActivityStatus.Complete)
-                {
-            <div class="visible">
-                <div class="form-group">
-                    <label asp-for="Activity.DateCompleted" class="control-label"></label>
-                    <input asp-for="Activity.DateCompleted" class="form-control" />
-                    <span asp-validation-for="Activity.DateCompleted" class="text-danger"></span>
+        hr {
+            clear: both;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="row" style="display: flex">
+        <div class="col-auto" style="float:left">
+            <h1 class="text-primary m-0 fw-bold">Edit Activity</h1>
+        </div>
+    </div>
+    <form method="post">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow mb-3">
+                    <div class="card-header py-3">
+                        <p class="text-primary m-0 fw-bold"></p>
+                    </div>
+                    <div class="card-body">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Activity.ActivityID" />
+                        <div class="form-group">
+                            <label asp-for="Activity.ActivityTask.TaskDescription" class="control-label"></label>
+                            <select asp-for="Activity.ActivityTaskID" class="form-control" asp-items="ViewBag.ActivityTaskID"></select>
+                            <span asp-validation-for="Activity.ActivityTaskID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Activity.Contact.LastName" class="control-label"></label>
+                            <select asp-for="Activity.ContactID" class="form-control" asp-items="ViewBag.ContactID"></select>
+                            <span asp-validation-for="Activity.ContactID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Activity.DateScheduled" class="control-label"></label>
+                            <input asp-for="Activity.DateScheduled" class="form-control" />
+                            <span asp-validation-for="Activity.DateScheduled" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Activity.WhoToNotify" class="control-label"></label>
+                            <input asp-for="Activity.WhoToNotify" class="form-control" />
+                            <span asp-validation-for="Activity.WhoToNotify" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Activity.HowToNotify" class="control-label"></label>
+                            <input asp-for="Activity.HowToNotify" class="form-control" />
+                            <span asp-validation-for="Activity.HowToNotify" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Activity.Notes" class="control-label"></label>
+                            <input asp-for="Activity.Notes" class="form-control" />
+                            <span asp-validation-for="Activity.Notes" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Activity.Status" class="control-label"></label>
+                            <select asp-for="Activity.Status" class="form-control" asp-items="Html.GetEnumSelectList<CapstoneSalesCRM.Models.ActivityStatus>()"></select>
+
+                            @if (Model.Activity.Status == Models.ActivityStatus.Complete)
+                            {
+                                <div class="visible">
+                                    <div class="form-group">
+                                        <label asp-for="Activity.DateCompleted" class="control-label"></label>
+                                        <input asp-for="Activity.DateCompleted" class="form-control" />
+                                        <span asp-validation-for="Activity.DateCompleted" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            }
+
+
+                        </div>
+
+
+                        <div class="row">
+                            <div>
+                                <input type="submit" value="&#xf0c7 Save" class="btn btn-primary" />
+                                <a class="btn btn-primary" asp-page="Index"><i class="fas fa-undo"></i>&nbsp;Back to List</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-                }
+        </div>
+    </form>
 
+</body>
 
-            </div>
-
-           
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
