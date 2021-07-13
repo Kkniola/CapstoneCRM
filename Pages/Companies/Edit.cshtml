@@ -36,43 +36,46 @@
                     <div class="card-body">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <input type="hidden" asp-for="Company.CompanyID" />
-                        <div class="form-group">
-                            <label asp-for="Company.CompanyName" class="control-label"></label>
-                            <input asp-for="Company.CompanyName" class="form-control" />
-                            <span asp-validation-for="Company.CompanyName" class="text-danger"></span>
-                        </div>
+                        <div class="row">
+                            <div class="col">
 
-                        <div class="form-group">
-                            <label asp-for="Company.IndustryID" class="control-label"></label>
-                            <select asp-for="Company.IndustryID" class="form-control" asp-items="ViewBag.IndustryID"></select>
-                            <span asp-validation-for="Company.IndustryID" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Company.Website" class="control-label"></label>
-                            <input asp-for="Company.Website" class="form-control" />
-                            <span asp-validation-for="Company.Website" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Company.LinkedIn" class="control-label"></label>
-                            <input asp-for="Company.LinkedIn" class="form-control" />
-                            <span asp-validation-for="Company.LinkedIn" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Company.Facebook" class="control-label"></label>
-                            <input asp-for="Company.Facebook" class="form-control" />
-                            <span asp-validation-for="Company.Facebook" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Save" class="btn btn-primary" />
+                                <label asp-for="Company.CompanyName" class="control-label"></label>
+                                <input asp-for="Company.CompanyName" class="form-control" />
+                                <span asp-validation-for="Company.CompanyName" class="text-danger"></span>
+                            </div>
+
+                            <div class="col">
+
+                                <label asp-for="Company.IndustryID" class="control-label"></label>
+                                <select asp-for="Company.IndustryID" class="form-control" asp-items="ViewBag.IndustryID"></select>
+                                <span asp-validation-for="Company.IndustryID" class="text-danger"></span>
+                            </div>
                         </div>
                         <div class="row">
-                            <div>
-                                <input type="submit" value="&#xf067 Create" class="btn btn-primary" />
-                                <a class="btn btn-primary" asp-page="Index"><i class="fas fa-undo"></i>&nbsp;Back to List</a>
+                            <div class="col">
+                                <label asp-for="Company.Website" class="control-label"></label>
+                                <input asp-for="Company.Website" class="form-control" />
+                                <span asp-validation-for="Company.Website" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="Company.LinkedIn" class="control-label"></label>
+                                <input asp-for="Company.LinkedIn" class="form-control" />
+                                <span asp-validation-for="Company.LinkedIn" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="Company.Facebook" class="control-label"></label>
+                                <input asp-for="Company.Facebook" class="form-control" />
+                                <span asp-validation-for="Company.Facebook" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <input type="submit" value="&#xf0c7 Save" class="btn btn-primary" />
+                <a class="btn btn-primary" asp-page="Index"><i class="fas fa-undo"></i>&nbsp;Back to List</a>
             </div>
         </div>
     </form>
