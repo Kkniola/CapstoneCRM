@@ -37,7 +37,7 @@ namespace CapstoneSalesCRM.Pages.Companies
             {
                 return NotFound();
             }
-           ViewData["IndustryID"] = new SelectList(_context.Industry, "IndustryID", "IndustryID");
+           ViewData["Description"] = new SelectList(_context.Industry, "Description", "Description");
             return Page();
         }
 
