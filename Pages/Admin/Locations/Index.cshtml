@@ -7,91 +7,103 @@
 <head>
     <link rel="stylesheet" href="/css/custom.css" />
     <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+    <style>
+        tr:nth-last-child(even) {
+            background-color: #EFF8FF;
+        }
+        hr {
+            clear: both;
+            visibility: hidden;
+        }
+    </style>
 </head>
 
+<body>
+    <div class="row">
+        <div class="col">
+            <div class="card shadow mb-3">
+                <div class="card-header py-3">
+                    <h1 class="text-primary m-0 fw-bold">Locations</h1>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-auto" align="left">
+                            <a class="btn btn-primary" asp-page="Create"><i class="fas fa-plus"></i>&nbsp;Create New</a>
+                        </div>
+                        <hr />
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.Location[0].LocationName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Location[0].LocationAddress1)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Location[0].LocationAddress2)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Location[0].LocationCity)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Location[0].Country)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Location[0].MainPhone)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Location[0].State)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Location[0].Company)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Location)
+                                {
+                                    <tr>
 
-<div class="row">
-    <div class="col">
-        <div class="card shadow mb-3">
-            <div class="card-header py-3">
-                <h1 class="text-primary m-0 fw-bold">Locations</h1>
-            </div>
-            <div class="card-body">
-                <p>
-                    <a asp-page="Create">Create New</a>
-                </p>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Location[0].LocationName)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Location[0].LocationAddress1)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Location[0].LocationAddress2)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Location[0].LocationCity)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Location[0].Country)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Location[0].MainPhone)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Location[0].State)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Location[0].Company)
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model.Location)
-                        {
-                            <tr>
-
-                                <td>
-                                    @Html.DisplayFor(model => item.LocationName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.LocationAddress1)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.LocationAddress2)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.LocationCity)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Country)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.MainPhone)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.State.StateName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Company.CompanyName)
-                                </td>
-                                <td>
-                                    <a asp-page="./Edit" asp-route-id="@item.LocationID"><i class="far fa-edit"></i></a> |
-                                    <a asp-page="./Details" asp-route-id="@item.LocationID"><i class="far fa-address-card"></i></a> |
-                                    <a asp-page="./Delete" asp-route-id="@item.LocationID"><i class="far fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-                <p>
-                    <a href="/Index">Return to Home</a>
-                </p>
-            </div>
-        </div>
+                                        <td>
+                                            @Html.DisplayFor(model => item.LocationName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.LocationAddress1)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.LocationAddress2)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.LocationCity)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Country)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MainPhone)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.State.StateName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Company.CompanyName)
+                                        </td>
+                                        <td>
+                                            <a asp-page="./Edit" asp-route-id="@item.LocationID"><i class="far fa-edit"></i></a> |
+                                            <a asp-page="./Details" asp-route-id="@item.LocationID"><i class="far fa-address-card"></i></a> |
+                                            <a asp-page="./Delete" asp-route-id="@item.LocationID"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div></div>
+        <p>
+            <a class="btn btn-primary" asp-page="/Index">Return to Home</a>
+        </p>
     </div>
-</div>
+</body>

@@ -5,99 +5,114 @@
     ViewData["Title"] = "Activities";
 }
 <head>
+    <link rel="stylesheet" href="/css/custom.css" />
     <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+    <style>
+        tr:nth-last-child(even) {
+            background-color: #EFF8FF;
+        }
+        hr {
+            clear: both;
+            visibility: hidden;
+        }
+    </style>
 </head>
 
-            
+<body>         
+<div class="row">
+    <div class="col">
+        <div class="card shadow mb-3">
+            <div class="card-header py-3">
+                <h1 class="text-primary m-0 fw-bold">Activities</h1>
+            </div>
+            <div class="card-body">
                 <div class="row">
-                    <div class="col">
-                        <div class="card shadow mb-3">
-                            <div class="card-header py-3">
-                                <h1 class="text-primary m-0 fw-bold">Activities</h1>
-                            </div>
-                            <div class="card-body">
-                                <p>
-                                    <a asp-page="Create">Create New</a>
-                                </p>
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Activity[0].Contact)
-                                            </th>
-                                            <th>
-                                                Task
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Activity[0].DateScheduled)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Activity[0].WhoToNotify)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Activity[0].HowToNotify)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Activity[0].Notes)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Activity[0].Status)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Activity[0].DateCompleted)
-                                            </th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var item in Model.Activity)
-                                        {
-                                            <tr>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Contact.FirstName) @Html.DisplayFor(modelItem => item.Contact.LastName)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.ActivityTask.TaskDescription)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.DateScheduled)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.WhoToNotify)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.HowToNotify)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Notes)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Status)
-                                                </td>
-                                                <td>
-                                                    @if (item.DateCompleted == null)
-                                                    {
-                                                        @:Not Completed
-                                                    }
-                                                    else
-                                                    {
-                                                        @Html.DisplayFor(modelItem => item.DateCompleted)
-                                                    }
-
-                                                </td>
-                                                <td>
-                                                    <a asp-page="./Edit" asp-route-id="@item.ActivityID"><i class="far fa-edit"></i></a> |
-                                                    <a asp-page="./Details" asp-route-id="@item.ActivityID"><i class="far fa-address-card"></i></a> |
-                                                    <a asp-page="./Delete" asp-route-id="@item.ActivityID"><i class="far fa-trash-alt"></i></a>
-                                                </td>
-                                            </tr>
-                                        }
-                                    </tbody>
-                                </table>
-                                <p>
-                                    <a href="/Index">Return to Home</a>
-                                </p>
-                            </div>
-                        </div>
+                    <div class="col-auto" align="left">
+                        <a class="btn btn-primary" asp-page="Create"><i class="fas fa-plus"></i>&nbsp;Create New</a>
                     </div>
+                    <hr />
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Activity[0].Contact)
+                                </th>
+                                <th>
+                                    Task
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Activity[0].DateScheduled)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Activity[0].WhoToNotify)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Activity[0].HowToNotify)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Activity[0].Notes)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Activity[0].Status)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Activity[0].DateCompleted)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Activity)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Contact.FirstName) @Html.DisplayFor(modelItem => item.Contact.LastName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ActivityTask.TaskDescription)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DateScheduled)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.WhoToNotify)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HowToNotify)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Notes)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Status)
+                                    </td>
+                                    <td>
+                                        @if (item.DateCompleted == null)
+                                        {
+                                            @:Not Completed
+                                        }
+                                        else
+                                        {
+                                            @Html.DisplayFor(modelItem => item.DateCompleted)
+                                        }
+
+                                    </td>
+                                    <td>
+                                        <a asp-page="./Edit" asp-route-id="@item.ActivityID"><i class="far fa-edit"></i></a> |
+                                        <a asp-page="./Details" asp-route-id="@item.ActivityID"><i class="far fa-address-card"></i></a> |
+                                        <a asp-page="./Delete" asp-route-id="@item.ActivityID"><i class="far fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
                 </div>
+            </div>
+    </div>
+ </div>
+    <p>
+        <a class="btn btn-primary" asp-page="/Index">Return to Home</a>
+    </p>
+</div>
+</body>

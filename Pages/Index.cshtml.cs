@@ -33,6 +33,9 @@ namespace CapstoneSalesCRM.Pages
         public List<Contact> ContactUserList { get; set; }
         public List<Activity> ActivityList { get; set; }
         public IList<Location> Locations { get; set; }
+        public List<Contact> Contact { get; set; }
+        public List<Company> Companies { get; set; }
+        public List<Activity> IncompleteActivities { get; set; }
         public async Task<IActionResult> OnGetAsync()
         {
             ContactUserList = await _db.Contact
@@ -40,9 +43,22 @@ namespace CapstoneSalesCRM.Pages
                 .OrderByDescending(c => c.DateCreated)
                 .Take(10).ToListAsync();
 
+            Contact = await _db.Contact
+                .OrderBy(c => c.DateCreated)
+                .ToListAsync();
+
+            Companies = await _db.Company
+                .ToListAsync();
+
+
             Locations = await _db.Location
               .Include(c => c.Company)
               .ToListAsync();
+
+            IncompleteActivities = await _db.Activity
+                .Include(c => c.ActivityTask)
+                .Where(c => c.Status == ActivityStatus.Incomplete)
+                .ToListAsync();
 
 
             ActivityList = await _db.Activity

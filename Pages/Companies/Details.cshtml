@@ -25,7 +25,8 @@
         </div>
         <div class="col" align="right">
             <a asp-page="./Edit" asp-route-id="@Model.Company.CompanyID" class="btn btn-primary btn-sm"> Edit <i class="far fa-edit"></i></a>
-            <a asp-page="./Index" class="btn btn-primary btn-sm">Back to List</a>
+            <a asp-page="./Delete" asp-route-id="@Model.Company.CompanyID" class="btn btn-danger btn-sm"> Delete <i class="fas fa-trash-alt"></i></a>
+            <a asp-page="./Index" class="btn btn-primary btn-sm">Back to List <i class="fas fa-undo"></i></a>
         </div>
     </div>
     <hr />
@@ -107,6 +108,9 @@
                 </div>
             </div>
         </div>
+        <p>
+            <a class="btn btn-primary" asp-page="/Index">Return to Home</a>
+        </p>
     </div>
 
 
