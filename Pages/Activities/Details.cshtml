@@ -4,86 +4,104 @@
 @{
     ViewData["Title"] = "Details";
 }
+<head>
+        <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+        <style>
+            tr:nth-last-child(even) {
+                background-color: #EFF8FF;
+            }
 
-<h1 class="text-primary m-0 fw-bold">Details</h1>
+            hr {
+                clear: both;
+                visibility: hidden;
+            }
+        </style>
+</head>
 
-<div>
-    <div class="row">
-        <div class="col">
-            <div class="card shadow mb-3">
-                <div class="card-header py-3">
-                    <p class="text-primary m-0 fw-bold">Activity</p>
-                </div>
-                <div class="card-body">
-                    <dl class="row">
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Activity.Contact)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Activity.Contact.FirstName) @Html.DisplayFor(model => model.Activity.Contact.LastName)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Activity.ActivityTask.TaskDescription)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Activity.ActivityTask.TaskDescription)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Activity.DateScheduled)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Activity.DateScheduled)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Activity.WhoToNotify)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Activity.WhoToNotify)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Activity.HowToNotify)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Activity.HowToNotify)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Activity.Notes)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Activity.Notes)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Activity.Status)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Activity.Status)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Activity.DateCompleted)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Activity.DateCompleted)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Activity.DateCreated)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Activity.DateCreated)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Activity.CreatedBy)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Activity.CreatedBy)
-                        </dd>
-                    </dl>
-                </div>
-                <div>
-                    <a asp-page="./Edit" asp-route-id="@Model.Activity.ActivityID">Edit</a> |
-                    <a asp-page="./Index">Back to List</a>
-                </div>
+<body>
+    <div>
+        <div class="row">
+            <div class="col">
+                <div class="card shadow mb-3">
+                    <div class="card-header py-3">
+                        <p class="text-primary m-0 fw-bold">Activity</p>
+                    </div>
+                    <div class="card-body">
+                        <dl class="row">
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Activity.Contact)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Activity.Contact.FirstName) @Html.DisplayFor(model => model.Activity.Contact.LastName)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Activity.ActivityTask.TaskDescription)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Activity.ActivityTask.TaskDescription)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Activity.DateScheduled)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Activity.DateScheduled)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Activity.WhoToNotify)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Activity.WhoToNotify)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Activity.HowToNotify)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Activity.HowToNotify)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Activity.Notes)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Activity.Notes)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Activity.Status)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Activity.Status)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Activity.DateCompleted)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Activity.DateCompleted)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Activity.DateCreated)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Activity.DateCreated)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Activity.CreatedBy)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Activity.CreatedBy)
+                            </dd>
+                        </dl>
+                    </div>
 
+
+                </div>
             </div>
         </div>
+    </div>                    
+    <div class="row">
+        <div>
+            <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@Model.Activity.ActivityID"><i class="fas fa-edit"></i>&nbsp;Edit</a>
+            <a asp-page="./Delete" asp-route-id="@Model.Activity.ActivityID" class="btn btn-danger"> Delete <i class="fas fa-trash-alt"></i></a>
+            <a asp-page="./Index" class="btn btn-primary">Back to List <i class="fas fa-undo"></i></a>
+            <a class="btn btn-primary" asp-page="/Index">Return to Home</a>
+        </div>
     </div>
-</div>
+</body>

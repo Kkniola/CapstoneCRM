@@ -26,9 +26,10 @@
                 @Html.DisplayFor(model => model.Contact.LastName)
             </h1>
         </div>
-        <div class="col"  align="right">
+        <div class="col" align="right">
             <a asp-page="./Edit" asp-route-id="@Model.Contact.ContactID" class="btn btn-primary btn-sm"> Edit <i class="far fa-edit"></i></a>
-            <a asp-page="./Index" class="btn btn-primary btn-sm">Back to List</a>
+            <a asp-page="./Delete" asp-route-id="@Model.Contact.ContactID" class="btn btn-danger btn-sm"> Delete <i class="fas fa-trash-alt"></i></a>
+            <a asp-page="./Index" class="btn btn-primary btn-sm">Back to List <i class="fas fa-undo"></i></a>
         </div>
     </div>
     <hr />
@@ -355,42 +356,45 @@
                 <div class="card-body">
 
                     <table width="100%">
-                            <thead>
+                        <thead>
+
+                            <tr>
+                                <th>DateScheduled</th>
+                                <th>Date Created</th>
+                                <th>Task Description</th>
+                                <th>Status</th>
+                                <th>Notes</th>
+                                <th>Date Completed</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            @foreach (var aitem in Model.Activity)
+                            {
 
                                 <tr>
-                                    <th>DateScheduled</th>
-                                    <th>Date Created</th>
-                                    <th>Task Description</th>
-                                    <th>Status</th>
-                                    <th>Notes</th>
-                                    <th>Date Completed</th>
+                                    <td>@Html.DisplayFor(modelItem => aitem.DateScheduled)</td>
+                                    <td>@Html.DisplayFor(modelItem => aitem.DateCreated)</td>
+                                    <td>@Html.DisplayFor(modelItem => aitem.ActivityTask.TaskDescription)</td>
+                                    <td>@Html.DisplayFor(modelItem => aitem.Status)</td>
+                                    <td>@Html.DisplayFor(modelItem => aitem.Notes)</td>
+                                    <td>@Html.DisplayFor(modelItem => aitem.DateCompleted)</td>
                                 </tr>
 
-                            </thead>
-                            <tbody>
-                                    @foreach (var aitem in Model.Activity)
-                                    {
+                            }
 
-                                        <tr>
-                                            <td>@Html.DisplayFor(modelItem => aitem.DateScheduled)</td>
-                                            <td>@Html.DisplayFor(modelItem => aitem.DateCreated)</td>
-                                            <td>@Html.DisplayFor(modelItem => aitem.ActivityTask.TaskDescription)</td>
-                                            <td>@Html.DisplayFor(modelItem => aitem.Status)</td>
-                                            <td>@Html.DisplayFor(modelItem => aitem.Notes)</td>
-                                            <td>@Html.DisplayFor(modelItem => aitem.DateCompleted)</td>
-                                        </tr>
+                        </tbody>
 
-                                    }
-                           
-                            </tbody>
-                        
-                        </table>
+                    </table>
 
                     <a asp-page="/Activities/Create" asp-route-id="@Model.Contact.ContactID" class="btn btn-primary btn-sm">Create New Activity</a>
                 </div>
 
             </div>
         </div>
+        <p>
+            <a class="btn btn-primary" asp-page="/Index">Return to Home</a>
+        </p>
     </div>
 
 

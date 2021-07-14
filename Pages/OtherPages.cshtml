@@ -14,6 +14,9 @@
             clear: both;
             visibility: hidden;
         }
+        dl{
+            text-align:center;
+        }
     </style>
 </head>
 
@@ -28,42 +31,58 @@
                 <hr />
                 <div class="row">
                     <div class="col">
+                        <dl>
+                            <dt><a class="text-body" asp-area="" asp-page="/Activities/Index" style="text-decoration:none"><i class="fas fa-chart-line fa-3x"></i></a></dt>
+                            <dd><a class="text-body" asp-area="" asp-page="/Activities/Index" style="text-decoration:none">Activities</a></dd>
+                        </dl>
+                    </div>
+                    <div class="col">
+                        <dl>
+                            <dt><a class="text-body" asp-area="" asp-page="/Admin/ActivityTasks/Index" style="text-decoration:none"><i class="fas fa-tasks fa-3x"></i></a></dt>
+                            <dd><a class="text-body" asp-area="" asp-page="/Admin/ActivityTasks/Index" style="text-decoration:none">Tasks</a></dd>
+                        </dl>
+                            </div>
+                    <div class="col">
+                        <dl>
+                            <dt><a class="text-body" asp-area="" asp-page="/Admin/Industries/Index" style="text-decoration:none"><i class="fas fa-industry fa-3x"></i></a></dt>
+                            <dd><a class="text-body" asp-area="" asp-page="/Admin/Industries/Index" style="text-decoration:none">Industries</a></dd>
+                        </dl>
+                    </div>
+                    <div class="col">
+                        <dl>
+                            <dt><a class="text-body" asp-area="" asp-page="/Admin/Locations/Index" style="text-decoration:none"><i class="far fa-compass fa-3x"></i></a></dt>
+                            <dd><a class="text-body" asp-area="" asp-page="/Admin/Locations/Index" style="text-decoration:none">Locations</a></dd>
+                        </dl>
+                    </div>
 
-                        <i class="fas fa-chart-line fa-3x"></i><br />
-                        <a class="text-dark" asp-area="" asp-page="/Activities/Index">Activities</a>
+                    <div class="col">
+                        <dl>
+                            <dt><a class="text-body" asp-area="" asp-page="/Admin/Roles/Index" style="text-decoration:none"><i class="fas fa-user-friends fa-3x"></i></a></dt>
+                            <dd><a class="text-body" asp-area="" asp-page="/Admin/Roles/Index" style="text-decoration:none">Roles</a></dd>
+                        </dl>
                     </div>
                     <div class="col">
-                        <i class="fas fa-tasks fa-3x"></i><br />
-                        <a class="text-dark" asp-area="" asp-page="/Admin/ActivityTasks/Index">Tasks</a>
+                        <dl>
+                            <dt><a class="text-body" asp-area="" asp-page="/Admin/Sources/Index" style="text-decoration:none"><i class="fas fa-tv fa-3x"></i></a></dt>
+                            <dd><a class="text-body" asp-area="" asp-page="/Admin/Sources/Index" style="text-decoration:none">Sources</a></dd>
+                        </dl>
                     </div>
                     <div class="col">
-                        <i class="fas fa-industry fa-3x"></i><br />
-                        <a class="text-dark" asp-area="" asp-page="/Admin/Industries/Index">Industries</a>
-                    </div>
-                    <div class="col">
-                        <i class="far fa-compass fa-3x"></i><br />
-                        <a class="text-dark" asp-area="" asp-page="/Admin/Locations/Index">Locations</a>
-                    </div>
-
-                    <div class="col">
-                        <i class="fas fa-user-friends fa-3x"></i><br />
-                        <a class="text-dark" asp-area="" asp-page="/Admin/Roles/Index">Roles</a>
-                    </div>
-                    <div class="col">
-                        <i class="fas fa-tv fa-3x"></i><br />
-                        <a class="text-dark" asp-area="" asp-page="/Admin/Sources/Index">Sources</a>
-                    </div>
-                    <div class="col">
-                        <i class="fas fa-globe-americas fa-3x"></i><br />
-                        <a class="text-dark" asp-area="" asp-page="/Admin/States/Index">States</a>
+                        <dl>
+                            <dt><a class="text-body" asp-area="" asp-page="/Admin/States/Index" style="text-decoration:none"><i class="fas fa-globe-americas fa-3x"></i></a></dt>
+                            <dd><a class="text-body" asp-area="" asp-page="/Admin/States/Index" style="text-decoration:none">States</a></dd>
+                        </dl>
                     </div>
 
 
                 </div>
-                <p>
-                    <a href="/Index">Return to Home</a>
-                </p>
+
             </div>
-        </div>
-    </div>
+        </div>   
+        <p>
+            <a class="btn btn-primary" asp-page="/Index">Return to Home</a>
+        </p>
+    </div> 
+    
+ 
 </body>

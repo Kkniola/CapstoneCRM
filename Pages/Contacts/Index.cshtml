@@ -9,7 +9,11 @@
 <head>
     <link rel="stylesheet" href="/css/custom.css" />
     <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
-
+    <style>
+        tr:nth-last-child(even) {
+            background-color: #EFF8FF;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,20 +30,20 @@
                     </div>
                     <div class="col" align="left">
                         @*<div class="text-md-end dataTables_filter" id="dataTable_filter">*@
-                            <div class="input-group" style="padding-top:.5em">
-                                <form asp-page="./Index" method="get">
+                        <div class="input-group" style="padding-top:.5em">
+                            <form asp-page="./Index" method="get">
 
-                                    <input class="bg-light border-0" style="line-height: 2.5em; display: inline-flex; vertical-align: middle; margin-bottom: 1em" type="text" name="SearchString" value="@Model.CurrentFilter" placeholder="Search first or last name" />
+                                <input class="bg-light border-0" style="line-height: 2.5em; display: inline-flex; vertical-align: middle; margin-bottom: 1em" type="text" name="SearchString" value="@Model.CurrentFilter" placeholder="Search first or last name" />
 
-                                    <input type="submit" value="&#xf002" class="btn btn-primary" style="display:inline-flex; vertical-align:middle; margin-bottom:2em"/>&nbsp;<a style="margin-bottom:2em" asp-page="./Index" class="btn btn-primary"><i class="fas fa-undo"></i></a>
+                                <input type="submit" value="&#xf002" class="btn btn-primary" style="display:inline-flex; vertical-align:middle; margin-bottom:2em" />&nbsp;<a style="margin-bottom:2em" asp-page="./Index" class="btn btn-primary"><i class="fas fa-undo"></i></a>
 
-                                </form>
-                            </div>
+                            </form>
+                        </div>
                         @*</div>*@
                     </div>
 
 
-                    <div class="col" align="right" style=" float:right">
+                    @*<div class="col" align="right" style=" float:right">
                         <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
                             <label class="form-label">
                                 Show&nbsp;<select class="d-inline-block form-select form-select-sm">
@@ -50,7 +54,7 @@
                                 </select>&nbsp;
                             </label>
                         </div>
-                    </div>
+                    </div>*@
 
                 </div>
 
@@ -58,206 +62,207 @@
 
 
 
-                    <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
 
 
-                        <table class="table my-0" id="dataTable">
-                            <thead>
+                    <table class="table my-0" id="dataTable">
+                        <thead>
+                            <tr>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].Prefix)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].FirstName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].LastName)
+                                </th>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].Suffix)
+                                </th>*@
+
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].Pronouns)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].Title)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].DOB)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].Email)
+                                </th>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].HomeAddress1)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].HomeAddress2)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].HomeCity)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].HomeZipCode)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].Country)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].HomePhone)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].CellPhone)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].WorkPhone)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].ContactMethod)
+                                </th>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].CreatedBy)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].DateCreated)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].LastDateContacted)
+                                </th>
+
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].Comment)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].Role)
+                                </th>
+                                <th>
+                                    Company
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].Location)
+                                </th>
+
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact[0].State)
+                                </th>
+                                <th style="padding-inline-end:6em"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Contact)
+                            {
                                 <tr>
-                                    @*<th>
-                            @Html.DisplayNameFor(model => model.Contact[0].Prefix)
-                        </th>*@
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Contact[0].FirstName)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Contact[0].LastName)
-                                    </th>
-                                    @*<th>
-                            @Html.DisplayNameFor(model => model.Contact[0].Suffix)
-                        </th>*@
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.Prefix)
+                                    </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FirstName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LastName)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.Suffix)
+                                    </td>*@
 
-                                    @*<th>
-                            @Html.DisplayNameFor(model => model.Contact[0].Pronouns)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Contact[0].Title)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Contact[0].DOB)
-                        </th>*@
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Contact[0].Email)
-                                    </th>
-                                    @*<th>
-                            @Html.DisplayNameFor(model => model.Contact[0].HomeAddress1)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Contact[0].HomeAddress2)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Contact[0].HomeCity)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Contact[0].HomeZipCode)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Contact[0].Country)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Contact[0].HomePhone)
-                        </th>*@
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Contact[0].CellPhone)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Contact[0].WorkPhone)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Contact[0].ContactMethod)
-                                    </th>
-                                    @*<th>
-                            @Html.DisplayNameFor(model => model.Contact[0].CreatedBy)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Contact[0].DateCreated)
-                        </th>*@
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Contact[0].LastDateContacted)
-                                    </th>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.Pronouns)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DOB)
+                                    </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.HomeAddress1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HomeAddress2)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HomeCity)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HomeZipCode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Country)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HomePhone)
+                                    </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CellPhone)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.WorkPhone)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ContactMethod)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DateCreated)
+                                    </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LastDateContacted)
+                                    </td>
 
-                                    @*<th>
-                            @Html.DisplayNameFor(model => model.Contact[0].Comment)
-                        </th>*@
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Contact[0].Role)
-                                    </th>
-                                    <th>
-                                        Company
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Contact[0].Location)
-                                    </th>
-
-
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Contact[0].State)
-                                    </th>
-                                    <th style="padding-inline-end:6em"></th>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.Comment)
+                                    </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Role.RoleDescription)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Company.CompanyName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Location.LocationName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.State.StateName)
+                                    </td>
+                                    <td class="mb-3">
+                                        <a asp-page="./Edit" asp-route-id="@item.ContactID"><i class="far fa-edit"></i></a> |
+                                        <a asp-page="./Details" asp-route-id="@item.ContactID"><i class="far fa-address-card"></i></a> |
+                                        <a asp-page="./Delete" asp-route-id="@item.ContactID"><i class="far fa-trash-alt"></i></a>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model.Contact)
-                                {
-                                    <tr>
-                                        @*<td>
-                                @Html.DisplayFor(modelItem => item.Prefix)
-                            </td>*@
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.FirstName)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.LastName)
-                                        </td>
-                                        @*<td>
-                                @Html.DisplayFor(modelItem => item.Suffix)
-                            </td>*@
+                            }
+                        </tbody>
+                    </table>
 
-                                        @*<td>
-                                @Html.DisplayFor(modelItem => item.Pronouns)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Title)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DOB)
-                            </td>*@
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Email)
-                                        </td>
-                                        @*<td>
-                                @Html.DisplayFor(modelItem => item.HomeAddress1)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.HomeAddress2)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.HomeCity)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.HomeZipCode)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Country)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.HomePhone)
-                            </td>*@
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.CellPhone)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.WorkPhone)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.ContactMethod)
-                                        </td>
-                                        @*<td>
-                                @Html.DisplayFor(modelItem => item.CreatedBy)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DateCreated)
-                            </td>*@
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.LastDateContacted)
-                                        </td>
-
-                                        @*<td>
-                                @Html.DisplayFor(modelItem => item.Comment)
-                            </td>*@
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Role.RoleDescription)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Company.CompanyName)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Location.LocationName)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.State.StateName)
-                                        </td>
-                                        <td class="mb-3">
-                                            <a asp-page="./Edit" asp-route-id="@item.ContactID"><i class="far fa-edit"></i></a> |
-                                            <a asp-page="./Details" asp-route-id="@item.ContactID"><i class="far fa-address-card"></i></a> |
-                                            <a asp-page="./Delete" asp-route-id="@item.ContactID"><i class="far fa-trash-alt"></i></a>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-
-                        <div class="row">
-                            <div class="col-md-6 align-self-center">
-                                <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
-                            </div>
-                            <div class="col-md-6">
-                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                    <ul class="pagination">
-                                        <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+                    @*<div class="row">
+                        <div class="col-md-6 align-self-center">
+                            <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
                         </div>
-                        <p>
-                            <a href="/Index">Return to Home</a>
-                        </p>
-                    </div>
+                        <div class="col-md-6">
+                            <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                <ul class="pagination">
+                                    <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>*@
+
                 </div>
             </div>
+        </div>                    
+        <p>
+            <a class="btn btn-primary" asp-page="/Index">Return to Home</a>
+        </p>
     </div>
 </body>

@@ -5,7 +5,20 @@
     ViewData["Title"] = "Details";
 }
 
-<h1 class="text-primary m-0 fw-bold">Details</h1>
+<head>
+    <script src="https://kit.fontawesome.com/cb166f3e9b.js" crossorigin="anonymous"></script>
+    <style>
+        tr:nth-last-child(even) {
+            background-color: #EFF8FF;
+        }
+
+        hr {
+            clear: both;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
 
 <div>
     <div class="row">
@@ -24,11 +37,17 @@
                         </dd>
                     </dl>
                 </div>
-                <div>
-                    <a asp-page="./Edit" asp-route-id="@Model.Industry.IndustryID">Edit</a> |
-                    <a asp-page="./Index">Back to List</a>
-                </div>
+
             </div>
         </div>
     </div>
+</div> 
+<div class="row">
+    <div>
+        <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@Model.Industry.IndustryID">Edit</a>
+        <a asp-page="./Delete" asp-route-id="@Model.Industry.IndustryID" class="btn btn-danger"> Delete <i class="fas fa-trash-alt"></i></a>
+        <a asp-page="./Index" class="btn btn-primary">Back to List <i class="fas fa-undo"></i></a>
+        <a class="btn btn-primary" asp-page="/Index">Return to Home</a>
+    </div>
 </div>
+</body>
