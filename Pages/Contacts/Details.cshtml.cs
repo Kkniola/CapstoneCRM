@@ -48,7 +48,7 @@ namespace CapstoneSalesCRM.Pages.Contacts
                 .Include(c => c.Company)
                 .ToListAsync();
 
-                Contact.Company = Locations.FirstOrDefault(l => l.LocationID == Contact.LocationID).Company;
+                //Contact.Company = Locations.FirstOrDefault(l => l.LocationID == Contact.LocationID).Company;
           
 
             if (Contact == null)

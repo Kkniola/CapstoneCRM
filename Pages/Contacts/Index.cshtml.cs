@@ -82,10 +82,10 @@ namespace CapstoneSalesCRM.Pages.Contacts
               .Include(c => c.Company)
               .ToListAsync();
 
-            foreach (Contact contact in Contact)
-            {
-                contact.Company = Locations.FirstOrDefault(l => l.LocationID == contact.LocationID).Company;
-            }
+            //foreach (Contact contact in Contact)
+            //{
+            //    contact.Company = Locations.FirstOrDefault(l => l.LocationID == contact.LocationID).Company;
+            //}
 
         }
     }

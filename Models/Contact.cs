@@ -80,8 +80,8 @@ namespace CapstoneSalesCRM.Models
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [DataType(DataType.Date)]
         public DateTime LastDateContacted { get; set; }
-        [Display(Name = "Contact Type ID")] 
-        public int ContactTypeID { get; set; }
+        //[Display(Name = "Contact Type ID")] 
+        //public int ContactTypeID { get; set; }
         [Display(Name = "Comment")] 
         public string Comment { get; set; }
 
@@ -97,7 +97,7 @@ namespace CapstoneSalesCRM.Models
         public State State { get; set; }
         //public Activity Activity { get; set; }
 
-        public Company  Company { get; set; }
+        //public Company  Company { get; set; }
 
 
         public ICollection<Activity> Activities { get; set; }

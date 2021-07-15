@@ -161,11 +161,11 @@
                             <input asp-for="Contact.WorkPhone" class="form-control" />
                             <span asp-validation-for="Contact.WorkPhone" class="text-danger"></span>
                         </div>
-                        <div class="col">
+                        @*<div class="col">
                             <label asp-for="Contact.Company.CompanyName" class="control-label"></label>
                             <select asp-for="Contact.Company.CompanyName" class="form-control" asp-items="ViewBag.CompanyName"></select>
                             <span asp-validation-for="Contact.Company.CompanyName" class="text-danger"></span>
-                        </div>
+                        </div>*@
                         <div class="col">
                             <label asp-for="Contact.Location.LocationName" class="control-label"></label>
                             <select asp-for="Contact.LocationID" class="form-control" asp-items="ViewBag.LocationID"></select>

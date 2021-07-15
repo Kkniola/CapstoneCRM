@@ -4,14 +4,16 @@ using CapstoneSalesCRM.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CapstoneSalesCRM.Migrations
 {
     [DbContext(typeof(CapstoneSalesCRMContext))]
-    partial class CapstoneSalesCRMContextModelSnapshot : ModelSnapshot
+    [Migration("20210715022909_Test")]
+    partial class Test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -122,6 +124,9 @@ namespace CapstoneSalesCRM.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("CompanyID")
+                        .HasColumnType("int");
+
                     b.Property<string>("ContactMethod")
                         .HasColumnType("nvarchar(max)");
 
@@ -210,6 +215,8 @@ namespace CapstoneSalesCRM.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ContactID");
+
+                    b.HasIndex("CompanyID");
 
                     b.HasIndex("ContactTypeID1");
 
@@ -361,6 +368,10 @@ namespace CapstoneSalesCRM.Migrations
 
             modelBuilder.Entity("CapstoneSalesCRM.Models.Contact", b =>
                 {
+                    b.HasOne("CapstoneSalesCRM.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyID");
+
                     b.HasOne("CapstoneSalesCRM.Models.ContactType", null)
                         .WithMany("Contacts")
                         .HasForeignKey("ContactTypeID1");

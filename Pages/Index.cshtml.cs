@@ -40,6 +40,7 @@ namespace CapstoneSalesCRM.Pages
         {
             ContactUserList = await _db.Contact
                 .Include(c => c.Location)
+                .Include(c => c.Role)
                 .OrderByDescending(c => c.DateCreated)
                 .Take(10).ToListAsync();
 
@@ -68,10 +69,12 @@ namespace CapstoneSalesCRM.Pages
                 .OrderBy(c => c.DateScheduled)
                 .Take(10).ToListAsync();
 
-            foreach (Contact contact in ContactUserList)
-            {
-                contact.Company = Locations.FirstOrDefault(l => l.LocationID == contact.LocationID).Company;
-            }
+            //foreach (Contact contact in ContactUserList)
+            //{
+            //    contact.Company = Locations.FirstOrDefault(l => l.LocationID == contact.LocationID).Company;
+            //}
+
+
             return Page();
         }
     }
