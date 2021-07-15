@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using CapstoneSalesCRM.Data;
 using CapstoneSalesCRM.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CapstoneSalesCRM.Pages.Contacts
 {
@@ -40,6 +41,14 @@ namespace CapstoneSalesCRM.Pages.Contacts
             {
                 return Page();
             }
+
+            Contact.LocationID = (await _context.Location
+                .ToListAsync()).Where(loc => loc.LocationName == Contact.Location.LocationName).Select(loc => loc.LocationID).FirstOrDefault();
+
+            Contact.Location = null;
+
+
+
 
             _context.Contact.Add(Contact);
             await _context.SaveChangesAsync();

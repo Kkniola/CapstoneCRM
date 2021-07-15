@@ -13,7 +13,7 @@ namespace CapstoneSalesCRM.Models
         [Display(Name = "Contact Type")] 
         public string ContactTypeDescription { get; set; }
     
-        public ICollection<Contact> Contacts { get; set; }
+        //public ICollection<Contact> Contacts { get; set; }
     }
 
 }

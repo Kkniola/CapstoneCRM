@@ -175,23 +175,36 @@
                                     {
                                         rowColor = "generalRow";
                                     }
-                                    <tr class="@rowColor">
-                                        <th>
-                                            @Html.DisplayFor(m => CUitem.FirstName)&nbsp;
-                                        </th>
-                                        <th>
-                                            @Html.DisplayFor(m => CUitem.LastName)&nbsp;
-                                        </th>
-                                        <th>
-                                            @Html.DisplayFor(m => CUitem.Location.Company.CompanyName)&nbsp;
-                                        </th>
-                                        <th>
-                                            @Html.DisplayFor(m => CUitem.Location.LocationName)&nbsp;
-                                        </th>
-                                        <th>
-                                            <a asp-page="/Contacts/Details" asp-route-id="@CUitem.ContactID"><i class="far fa-address-card"></i></a>
-                                        </th>
-                                    </tr>
+                                <tr class="@rowColor">
+                                    @*<th>
+                                        @Html.DisplayFor(m => CUitem.Prefix)&nbsp;
+                                    </th>*@
+                                    <th>
+                                        @Html.DisplayFor(m => CUitem.FirstName)&nbsp;
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(m => CUitem.LastName)&nbsp;
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(m => CUitem.Role.RoleDescription)&nbsp;
+                                    </th>
+                                    @*<th>
+            @Html.DisplayFor(m => CUitem.HomeCity)&nbsp;
+        </th>*@
+
+                                    @*<th>
+            @Html.DisplayFor(m => CUitem.Location.Company.CompanyName)&nbsp;
+        </th>*@
+                                    <th>
+                                        @Html.DisplayFor(m => CUitem.Location.LocationName)&nbsp;
+                                    </th>
+                                    @*<th>
+                                        @Html.DisplayFor(m => CUitem.DateCreated)&nbsp;
+                                    </th>*@
+                                    <th>
+                                        <a asp-page="/Contacts/Details" asp-route-id="@CUitem.ContactID"><i class="far fa-address-card"></i></a>
+                                    </th>
+                                </tr>
                                 }
                             </table>
                         </div>
@@ -211,7 +224,7 @@
                                 <li class="list-group-item">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col me-2">
-                                            <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">10:30 AM</span>
+                                            <h6 class="mb-0"><strong>Follow Up Call</strong></h6><span class="text-xs">10:30 AM</span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1"></label></div>
@@ -231,7 +244,7 @@
                                 <li class="list-group-item">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col me-2">
-                                            <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">12:30 AM</span>
+                                            <h6 class="mb-0"><strong>Training</strong></h6><span class="text-xs">2:30 PM</span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3"></label></div>
